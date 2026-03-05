@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Mode Browser Documentation Ideas - WorldWideWeb</title>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/vendor/pico/pico.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bc98f03675.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-base.css">
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-page.css">
+</head>
+<body>
+    <div class="top-stripe" role="presentation"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <h1 class="site-title">Documentation Ideas</h1>
+        </div>
+    </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="../index.html">Home</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="../about/executive-summary.html">Executive Summary</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="line-mode-browser.html">Line Mode Browser</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <span aria-current="page">Documentation Ideas</span>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container">
+        <p class="page-intro">Notes and ideas for improving the documentation of the WWW Line Mode Browser. This page collects suggestions from users and developers for making the browser easier to learn and use.</p>
+
+        <section id="user-guide">
+            <h2>User Guide</h2>
+            <p>The primary documentation resource for the line-mode browser is the <a href="users-guide.html">User Guide</a>, which covers:</p>
+            <ul>
+                <li>Following hypertext references using numbered links</li>
+                <li>Searching index documents with the <code>find</code> command</li>
+                <li>Navigation commands (<code>back</code>, <code>home</code>, <code>top</code>)</li>
+                <li>Accessing help and further documentation</li>
+            </ul>
+        </section>
+
+        <section id="improvements">
+            <h2>Suggested Improvements</h2>
+            <p>The following areas have been identified as needing better documentation:</p>
+
+            <dl>
+                <dt><strong>Command Line Options</strong></dt>
+                <dd>The browser accepts several command-line flags when launched. These should be documented with examples showing how to start the browser pointing at a specific document or with specific display options.</dd>
+
+                <dt><strong>Configuration Files</strong></dt>
+                <dd>Users can customize the browser's behavior through configuration files. The location and syntax of these files should be clearly documented for each supported platform.</dd>
+
+                <dt><strong>Protocol Support</strong></dt>
+                <dd>The browser supports multiple protocols (HTTP, FTP, Gopher, NNTP). Each protocol has specific behaviors that users should understand when navigating different types of servers.</dd>
+
+                <dt><strong>Error Messages</strong></dt>
+                <dd>Common error messages should be documented with explanations of their causes and suggested remedies.</dd>
+
+                <dt><strong>Installation Guide</strong></dt>
+                <dd>Step-by-step installation instructions for each supported platform (Unix, VMS, etc.) would help new users get started more quickly.</dd>
+            </dl>
+        </section>
+
+        <section id="feedback">
+            <h2>Submitting Feedback</h2>
+            <p>If you have suggestions for improving the line-mode browser documentation, please send them to <a href="mailto:www-bug@info.cern.ch">www-bug@info.cern.ch</a>. All feedback is welcome and will be considered for future documentation updates.</p>
+        </section>
+
+        <address>
+            <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim BL</a>
+        </address>
+    </div>
+</main>
+
+<div class="accent-stripe" role="presentation"></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-sitemap">
+            <div>
+                <div class="sitemap-title">WWW Project</div>
+                <ul class="sitemap-links">
+                    <li><a href="../www-project/proposal.html">Proposal</a></li>
+                    <li><a href="../www-project/www-project-overview.html">WWW Project Overview</a></li>
+                    <li><a href="../about/policy.html">Project Aim</a></li>
+                    <li><a href="#">Web Book</a></li>
+                    <li><a href="../protocols/http/http-implementation.html">Http Implementation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Hypertext</div>
+                <ul class="sitemap-links">
+                    <li><a href="../hypertext/hypermedia.html">Hypermedia</a></li>
+                    <li><a href="../hypertext/hypertext-terms.html">Hypertext Terms</a></li>
+                    <li><a href="../hypertext/hypertext-timeline.html">Hypertext Timeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Technical</div>
+                <ul class="sitemap-links">
+                    <li><a href="../technical/technical-details.html">Technical Details</a></li>
+                    <li><a href="../software/daemon/w3-server-overview.html">W3 Server Overview</a></li>
+                    <li><a href="../protocols/http/http-protocol.html">Http Protocol</a></li>
+                    <li><a href="../mark-up/markup.html">Markup</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Resources</div>
+                <ul class="sitemap-links">
+                    <li><a href="../about/executive-summary.html">Executive Summary</a></li>
+                    <li><a href="../resources/browser-help.html">Browser Help</a></li>
+                    <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">CERN First Website HTML</a></li>
+                    <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+                    <li><a href="https://cernsite.codercafe.online" target="_blank">CERN Reference Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>NVCC · ITE170 Multimedia Software · Spring 2026</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URI Notation - WorldWideWeb</title>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/vendor/pico/pico.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bc98f03675.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-base.css">
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-page.css">
+</head>
+<body>
+    <div class="top-stripe" role="presentation"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <h1 class="site-title">URI Notation</h1>
+        </div>
+    </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="../index.html">Home</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="../technical/technical-details.html">Technical</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="w3-naming.html">W3 Naming</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <span aria-current="page">Notation</span>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container">
+        <p class="page-intro">The notation used for Universal Resource Identifiers (URIs) in the World Wide Web follows a formal grammar that defines how addresses are structured and interpreted by browsers and servers.</p>
+
+        <section id="bnf-grammar">
+            <h2>BNF Grammar</h2>
+            <p>The formal notation for W3 addresses uses Backus-Naur Form (BNF) grammar. The general structure of a URI is:</p>
+            <pre><code>URI        = scheme ":" schemepart
+scheme     = ALPHA *( ALPHA | DIGIT | "+" | "-" | "." )
+schemepart = *xchar | ip-schemepart</code></pre>
+
+            <p>For internet-based schemes, the common format includes a host and optional port:</p>
+            <pre><code>ip-schemepart = "//" login [ "/" urlpath ]
+login         = [ user [ ":" password ] "@" ] hostport
+hostport      = host [ ":" port ]
+host          = hostname | hostnumber
+port          = digits</code></pre>
+        </section>
+
+        <section id="path-notation">
+            <h2>Path Notation</h2>
+            <p>The path component of a URI follows Unix-style hierarchical notation:</p>
+            <ul>
+                <li>A leading <code>/</code> indicates an absolute path from the root of the server.</li>
+                <li>Path elements are separated by <code>/</code>.</li>
+                <li><code>..</code> refers to the parent directory.</li>
+                <li><code>.</code> refers to the current directory.</li>
+            </ul>
+            <p>Examples of valid path notation:</p>
+            <pre><code>/hypertext/WWW/TheProject.html
+../addressing/w3-naming.html
+./relative-naming.html</code></pre>
+        </section>
+
+        <section id="fragment-notation">
+            <h2>Fragment Notation</h2>
+            <p>A fragment identifier, introduced by <code>#</code>, refers to a named anchor within a document:</p>
+            <pre><code>http://info.cern.ch/hypertext/WWW/TheProject.html#section1</code></pre>
+            <p>The fragment is processed by the browser client and is not sent to the server.</p>
+        </section>
+
+        <section id="special-characters">
+            <h2>Special Characters and Escaping</h2>
+            <p>Certain characters have reserved meaning in URIs and must be percent-encoded when used in other contexts:</p>
+            <ul>
+                <li><code>%20</code> — space</li>
+                <li><code>%2F</code> — forward slash (when used literally)</li>
+                <li><code>%23</code> — hash (when used literally)</li>
+                <li><code>%3F</code> — question mark (when used literally)</li>
+            </ul>
+            <p>The encoding uses a percent sign followed by two hexadecimal digits representing the ASCII code of the character.</p>
+        </section>
+
+        <address>
+            <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim BL</a>
+        </address>
+    </div>
+</main>
+
+<div class="accent-stripe" role="presentation"></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-sitemap">
+            <div>
+                <div class="sitemap-title">WWW Project</div>
+                <ul class="sitemap-links">
+                    <li><a href="../www-project/proposal.html">Proposal</a></li>
+                    <li><a href="../www-project/www-project-overview.html">WWW Project Overview</a></li>
+                    <li><a href="../about/policy.html">Project Aim</a></li>
+                    <li><a href="#">Web Book</a></li>
+                    <li><a href="../protocols/http/http-implementation.html">Http Implementation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Hypertext</div>
+                <ul class="sitemap-links">
+                    <li><a href="../hypertext/hypermedia.html">Hypermedia</a></li>
+                    <li><a href="../hypertext/hypertext-terms.html">Hypertext Terms</a></li>
+                    <li><a href="../hypertext/hypertext-timeline.html">Hypertext Timeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Technical</div>
+                <ul class="sitemap-links">
+                    <li><a href="../technical/technical-details.html">Technical Details</a></li>
+                    <li><a href="../software/daemon/w3-server-overview.html">W3 Server Overview</a></li>
+                    <li><a href="../protocols/http/http-protocol.html">Http Protocol</a></li>
+                    <li><a href="../mark-up/markup.html">Markup</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Resources</div>
+                <ul class="sitemap-links">
+                    <li><a href="../about/executive-summary.html">Executive Summary</a></li>
+                    <li><a href="../resources/browser-help.html">Browser Help</a></li>
+                    <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">CERN First Website HTML</a></li>
+                    <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+                    <li><a href="https://cernsite.codercafe.online" target="_blank">CERN Reference Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>NVCC · ITE170 Multimedia Software · Spring 2026</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

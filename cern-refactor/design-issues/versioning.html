@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperText Design Issues: Versioning - WorldWideWeb</title>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/vendor/pico/pico.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bc98f03675.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-base.css">
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-page.css">
+</head>
+<body>
+    <div class="top-stripe" role="presentation"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <h1 class="site-title">Versioning</h1>
+        </div>
+    </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="../index.html">Home</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="../technical/technical-details.html">Technical</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <span aria-current="page">Versioning</span>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container">
+        <p class="page-intro">Definition: The storage and management of previous copies of a piece of information, for security, diagnostics, and interest.</p>
+
+        <section id="overview">
+            <h2>Design Considerations</h2>
+            <p>Versioning raises several fundamental design questions for a hypertext system:</p>
+            <ul>
+                <li>Do you want version control?</li>
+                <li>Can you reference a version only?</li>
+                <li>If you refer to a particular place in a node, how does one follow it in a new version, if that place ceases to exist?</li>
+            </ul>
+            <p>("Peter Aiken is the expert in this area" — Tim Oren, Apple)</p>
+        </section>
+
+        <section id="cern-approach">
+            <h2>The CERN Approach</h2>
+            <p>At CERN, versioning is a recognized requirement. Very often one wants to correct a news item, even one of limited life, without reissuing it. This is a problem with VAX/NOTES, for example.</p>
+
+            <p>The recommended approach is that the text for the current version is stored, and separately those modifications necessary to backtrack to previous versions. Previous versions would be regenerated only on the fly, as needed. (Apparently SCCS stores the original file and the differences. This system does allow you to distribute the differences when updating copies.)</p>
+
+            <p>If full differences (deltas) are kept, the first version is just the first delta from a null document. The latest version is not available without regenerating it from all the deltas. For speed, it is obviously useful to keep a copy of the latest version.</p>
+        </section>
+
+        <section id="accountability">
+            <h2>Accountability</h2>
+            <p>Versioning is necessary for accountability (— David Durand, dgd@cs.bu.edu). If an author is to be accountable for information published, it should be possible to demonstrate later what he wrote, even if he has later changed it.</p>
+
+            <p>A WWW server may provide versioning by allowing links between a document version and its previous and successive versions. This would be a good use of link typing.</p>
+
+            <p>Keeping track of versions allows one solution to the annotation problem.</p>
+        </section>
+
+        <address>
+            <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim BL</a>
+        </address>
+    </div>
+</main>
+
+<div class="accent-stripe" role="presentation"></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-sitemap">
+            <div>
+                <div class="sitemap-title">WWW Project</div>
+                <ul class="sitemap-links">
+                    <li><a href="../www-project/proposal.html">Proposal</a></li>
+                    <li><a href="../www-project/www-project-overview.html">WWW Project Overview</a></li>
+                    <li><a href="../about/policy.html">Project Aim</a></li>
+                    <li><a href="#">Web Book</a></li>
+                    <li><a href="../protocols/http/http-implementation.html">Http Implementation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Hypertext</div>
+                <ul class="sitemap-links">
+                    <li><a href="../hypertext/hypermedia.html">Hypermedia</a></li>
+                    <li><a href="../hypertext/hypertext-terms.html">Hypertext Terms</a></li>
+                    <li><a href="../hypertext/hypertext-timeline.html">Hypertext Timeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Technical</div>
+                <ul class="sitemap-links">
+                    <li><a href="../technical/technical-details.html">Technical Details</a></li>
+                    <li><a href="../software/daemon/w3-server-overview.html">W3 Server Overview</a></li>
+                    <li><a href="../protocols/http/http-protocol.html">Http Protocol</a></li>
+                    <li><a href="../mark-up/markup.html">Markup</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Resources</div>
+                <ul class="sitemap-links">
+                    <li><a href="../about/executive-summary.html">Executive Summary</a></li>
+                    <li><a href="../resources/browser-help.html">Browser Help</a></li>
+                    <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">CERN First Website HTML</a></li>
+                    <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+                    <li><a href="https://cernsite.codercafe.online" target="_blank">CERN Reference Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>NVCC · ITE170 Multimedia Software · Spring 2026</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

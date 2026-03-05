@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HTTP Protocol As Implemented In W3</title>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/protocols/core/vendor/pico/pico.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bc98f03675.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-base.css">
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-page.css">
+</head>
+<body>
+    <div class="top-stripe" role="presentation"></div>
+    <a href="http-implementation.html#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <h1 class="site-title">HTTP as implemented in WWW</h1>
+        </div>
+    </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="../../index.html">Home</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="../../technical/technical-details.html">Technical</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="../relevant-protocols.html">Protocols</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <span aria-current="page">HTTP Implementation</span>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container">
+        <p>This document defines the Hypertext Transfer protocol (HTTP) as currently implemented by the <a id="project-link" href="../../index.html">WorldWideWeb</a> initiative software. This is a subset of the <a id="proposed-protocol" href="https://cernsite.codercafe.online/cern-reference/protocols/HTTP.html">proposed</a> full HTTP protocol. No client profile information is transferred with the query. Future HTTP protocols will be back-compatible with this protocol.</p>
+        
+        <p>The definition of this protocol is in the public domain (see <a id="policy-link" href="https://cernsite.codercafe.online/cern-reference/Policy.html">policy</a>).</p>
+
+        <p>The protocol uses the normal internet-style telnet protocol style on a TCP-IP link. The following describes how a client acquires a (hypertext) document from an HTTP server, given an HTTP document <a id="addressing-link" href="https://cernsite.codercafe.online/cern-reference/Addressing/HTTPAddressing.html">address</a>.</p>
+
+        
+
+        <section id="connection">
+            <h2>Connection</h2>
+            <p>The client makes a TCP-IP connection to the host using the <a id="domain-link" href="https://cernsite.codercafe.online/cern-reference/Addressing/BNF.html#5">domain name</a> or <a id="ip-link" href="https://cernsite.codercafe.online/cern-reference/Addressing/BNF.html#45">IP number</a>, and the <a id="port-link" href="https://cernsite.codercafe.online/cern-reference/Addressing/BNF.html#7">port number</a> given in the address.</p>
+            
+            <p>If the port number is not specified, 80 is always assumed for HTTP.</p>
+            
+            <p>The server accepts the connection.</p>
+            
+            <div class="technical-note">
+                <p><strong>Note:</strong> HTTP currently runs over TCP, but could run over any connection-oriented service. The interpretation of the protocol below in the case of a sequenced packet service (such as DECnet&trade; or ISO TP4) is that the request should be one TPDU, but the response may be many.</p>
+            </div>
+        </section>
+
+        <section id="request">
+            <h2>Request</h2>
+            <p>The client sends a document request consisting of a line of ASCII characters terminated by a CR LF (carriage return, line feed) pair. A well-behaved server will not require the carriage return character.</p>
+            
+            <p>This request consists of the word "GET", a space, the <a id="doc-address" href="https://cernsite.codercafe.online/cern-reference/Addressing/BNF.html#1">document address</a>, omitting the "http:", host and port parts when they are the coordinates just used to make the connection. (If a gateway is being used, then a full document address may be given specifying a different naming scheme).</p>
+            
+            <p>The search functionality of the protocol lies in the ability of the addressing syntax to describe a <a id="search-index" href="https://cernsite.codercafe.online/cern-reference/Addressing/Search.html">search on a named index</a>.</p>
+            
+            <p>A search should only be requested by a client when the index document itself has been described as an index using the <a id="isindex-tag" href="https://cernsite.codercafe.online/cern-reference/MarkUp/Tags.html#18">ISINDEX tag</a>.</p>
+        </section>
+
+        <section id="response">
+            <h2>Response</h2>
+            <p>The response to a simple GET request is a message in hypertext mark-up language (<a id="html-markup" href="https://cernsite.codercafe.online/cern-reference/MarkUp/MarkUp.html">HTML</a>). This is a byte stream of ASCII characters.</p>
+            
+            <p>Lines shall be delimited by an optional carriage return followed by a mandatory line feed character. The client should not assume that the carriage return will be present. Lines may be of any length. Well-behaved servers should restrict line length to 80 characters excluding the CR LF pair.</p>
+            
+            <p>The format of the message is HTML — that is, a trimmed SGML document. Note that this format allows for menus and hit lists to be returned as hypertext. It also allows for plain ASCII text to be returned following the <a id="plaintext-tag" href="https://cernsite.codercafe.online/cern-reference/MarkUp/Tags.html#7">PLAINTEXT tag</a>.</p>
+            
+            <p>The message is terminated by the closing of the connection by the server.</p>
+            
+            <p>Well-behaved clients will read the entire document as fast as possible. The client shall not wait for user action (output paging for example) before reading the whole of the document. The server may impose a timeout of the order of 15 seconds on inactivity.</p>
+            
+            <p>Error responses are supplied in human readable text in HTML syntax. There is no way to distinguish an error response from a satisfactory response except for the content of the text.</p>
+        </section>
+
+        <section id="disconnection">
+            <h2>Disconnection</h2>
+            <p>The TCP-IP connection is broken by the server when the whole document has been transferred.</p>
+            
+            <p>The client may abort the transfer by breaking the connection before this, in which case the server shall not record any error condition.</p>
+            
+            <p>Requests are <a id="idempotent-link" href="https://cernsite.codercafe.online/cern-reference/protocols/HTTP.html#13">idempotent</a>. The server need not store any information about the request after disconnection.</p>
+        </section>
+    </div>
+</main>
+
+ <div class="accent-stripe" role="presentation"></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-sitemap">
+            <div>
+                <div class="sitemap-title">WWW Project</div>
+                <ul class="sitemap-links">
+                    <li><a href="../../www-project/proposal.html">Proposal</a></li>
+                    <li><a href="../../www-project/www-project-overview.html">WWW Project Overview</a></li>
+                    <li><a href="../../about/policy.html">Project Aim</a></li>
+                    <li><a href="http-implementation.html#">Web Book</a></li>
+                    <li><a href="http-implementation.html">Http Implementation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Hypertext</div>
+                <ul class="sitemap-links">
+                    <li><a href="../../hypertext/hypermedia.html">Hypermedia</a></li>
+                    <li><a href="../../hypertext/hypertext-terms.html">Hypertext Terms</a></li>
+                    <li><a href="../../hypertext/hypertext-timeline.html">Hypertext Timeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Technical</div>
+                <ul class="sitemap-links">
+                    <li><a href="../../technical/technical-details.html">Technical Details</a></li>
+                    <li><a href="../../software/daemon/w3-server-overview.html">W3 Server Overview</a></li>
+                    <li><a href="http-protocol.html">Http Protocol</a></li>
+                    <li><a href="../../mark-up/markup.html">Markup</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Resources</div>
+                <ul class="sitemap-links">
+                    <li><a href="../../about/executive-summary.html">Executive Summary</a></li>
+                    <li><a href="../../resources/browser-help.html">Browser Help</a></li>
+                    <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">CERN First Website HTML</a></li>
+                    <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+                    <li><a href="https://cernsite.codercafe.online" target="_blank">CERN Reference Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>NVCC · ITE170 Multimedia Software · Spring 2026</span>
+        </div>
+    </div>
+</footer>
+
+<address>
+    <a id="tim-bl-disclaimer" href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim BL</a>
+</address>
+
+</body>
+</html>

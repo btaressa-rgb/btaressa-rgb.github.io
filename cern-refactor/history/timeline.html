@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypertext History Timeline - WorldWideWeb</title>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/vendor/pico/pico.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bc98f03675.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-base.css">
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-page.css">
+
+    <style>
+        /* Vertical timeline styles */
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+            list-style: none;
+            margin: 2rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--pico-primary, #1b6ca8);
+        }
+        .timeline-item {
+            position: relative;
+            padding: 0 0 2rem 4rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0.35rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: var(--pico-primary, #1b6ca8);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px var(--pico-primary, #1b6ca8);
+        }
+        .timeline-year {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--pico-primary, #1b6ca8);
+            margin-bottom: 0.25rem;
+        }
+        .timeline-event {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-stripe" role="presentation"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <h1 class="site-title">Hypertext History Timeline</h1>
+        </div>
+    </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="../index.html">Home</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="#">History</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <span aria-current="page">Timeline</span>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container">
+        <p class="page-intro">A chronological overview of key events in the history of hypertext and the World Wide Web, from Vannevar Bush's visionary 1945 article to the public launch of the Web.</p>
+
+        <ol class="timeline">
+            <li class="timeline-item">
+                <div class="timeline-year">1945</div>
+                <div class="timeline-event">
+                    <strong>Vannevar Bush</strong> publishes "As We May Think" in <em>The Atlantic Monthly</em>, proposing the MEMEX — a mechanical device to augment human memory through automated cross-referencing of documents.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1963</div>
+                <div class="timeline-event">
+                    <strong>Ted Nelson</strong> coins the term <em>"hypertext"</em> to describe non-sequential writing — text that branches and allows the reader to choose their own path.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1965</div>
+                <div class="timeline-event">
+                    Ted Nelson presents his hypertext concept at the ACM conference. He begins work on <strong>Project Xanadu</strong>, envisioning a universal hypertext repository.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1968</div>
+                <div class="timeline-event">
+                    <strong>Douglas Engelbart</strong> demonstrates the oN-Line System (NLS) at the "Mother of All Demos," showcasing hypertext linking, collaborative editing, and the computer mouse.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1980</div>
+                <div class="timeline-event">
+                    <strong>Tim Berners-Lee</strong> writes ENQUIRE — a personal database program at CERN that uses hypertext-style links between nodes, a precursor to the World Wide Web.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1987</div>
+                <div class="timeline-event">
+                    <strong>Apple</strong> releases HyperCard, bringing hypertext to millions of Macintosh users and popularizing the concept of linked cards and stacks.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1989</div>
+                <div class="timeline-event">
+                    Tim Berners-Lee submits his proposal <strong>"Information Management: A Proposal"</strong> to CERN management, outlining a distributed hypertext system for the internet. His supervisor Mike Sendall writes "Vague but exciting" on the cover.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1990</div>
+                <div class="timeline-event">
+                    Tim Berners-Lee and <strong>Robert Cailliau</strong> formalize the proposal for the World Wide Web. Berners-Lee writes the first web browser (WorldWideWeb) and the first web server (httpd) on a NeXT computer at CERN.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1991</div>
+                <div class="timeline-event">
+                    The World Wide Web is made available on the internet outside CERN. The first website goes live at <strong>info.cern.ch</strong>. The line-mode browser is released for non-NeXT platforms.
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-year">1993</div>
+                <div class="timeline-event">
+                    <strong>NCSA Mosaic</strong> is released, the first graphical web browser, dramatically increasing public access to the World Wide Web. CERN announces that the Web will be free and open to all.
+                </div>
+            </li>
+        </ol>
+
+        <address>
+            <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim BL</a>
+        </address>
+    </div>
+</main>
+
+<div class="accent-stripe" role="presentation"></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-sitemap">
+            <div>
+                <div class="sitemap-title">WWW Project</div>
+                <ul class="sitemap-links">
+                    <li><a href="../www-project/proposal.html">Proposal</a></li>
+                    <li><a href="../www-project/www-project-overview.html">WWW Project Overview</a></li>
+                    <li><a href="../about/policy.html">Project Aim</a></li>
+                    <li><a href="#">Web Book</a></li>
+                    <li><a href="../protocols/http/http-implementation.html">Http Implementation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Hypertext</div>
+                <ul class="sitemap-links">
+                    <li><a href="../hypertext/hypermedia.html">Hypermedia</a></li>
+                    <li><a href="../hypertext/hypertext-terms.html">Hypertext Terms</a></li>
+                    <li><a href="../hypertext/hypertext-timeline.html">Hypertext Timeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Technical</div>
+                <ul class="sitemap-links">
+                    <li><a href="../technical/technical-details.html">Technical Details</a></li>
+                    <li><a href="../software/daemon/w3-server-overview.html">W3 Server Overview</a></li>
+                    <li><a href="../protocols/http/http-protocol.html">Http Protocol</a></li>
+                    <li><a href="../mark-up/markup.html">Markup</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Resources</div>
+                <ul class="sitemap-links">
+                    <li><a href="../about/executive-summary.html">Executive Summary</a></li>
+                    <li><a href="../resources/browser-help.html">Browser Help</a></li>
+                    <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">CERN First Website HTML</a></li>
+                    <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+                    <li><a href="https://cernsite.codercafe.online" target="_blank">CERN Reference Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>NVCC · ITE170 Multimedia Software · Spring 2026</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative Naming - WorldWideWeb</title>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/vendor/pico/pico.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bc98f03675.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-base.css">
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-page.css">
+</head>
+<body>
+    <div class="top-stripe" role="presentation"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <h1 class="site-title">Relative Naming</h1>
+        </div>
+    </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="../index.html">Home</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="../technical/technical-details.html">Technical</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="w3-naming.html">W3 Naming</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <span aria-current="page">Relative Naming</span>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container">
+        <p class="page-intro">The address of a hypertext document is normally given within the context of another hypertext document. Where the addresses of the two documents are similar, this allows only the difference between the two names to be given, saving space.</p>
+
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>An example is the address of the destination of a hypertext link, which is specified relative to the source document address.</p>
+
+            <p>A further practical advantage is that a group of documents may be transmitted without internal changes, or accessed using more than one address.</p>
+
+            <p>This implies that certain characters (<code>/</code>, <code>..</code>) have a significance reserved for representing a hierarchical space, and must be recognized as such by both clients and servers.</p>
+        </section>
+
+        <section id="rules">
+            <h2>Rules for Relative Naming</h2>
+            <p>In <a href="w3-naming.html">the WWW address format</a>, the rules for relative naming are:</p>
+            <ul>
+                <li>If the <strong>scheme</strong> parts are different, the whole absolute address must be given. Otherwise, the scheme is omitted, and:</li>
+                <li>If the <strong>host</strong> and/or <strong>port</strong> parts are different, the host name and all the rest of the address must be given. The host name may be given using internet hostname conventions — domains may be omitted where different.</li>
+                <li>If the access and host parts are the same, then the path may be given with the Unix convention, including the use of <code>..</code> to indicate deletion of a path element. Within the path:</li>
+                <li>If a leading slash is present, the path is <strong>absolute</strong>. Otherwise:</li>
+                <li>The last part of the path of the base address (e.g. the filename of the current document) is removed, and the given relative address appended in its place.</li>
+                <li>Within the result, all occurrences of <code>xxx/..</code> or <code>/.</code> are recursively removed, where <code>xxx</code> is one path element (directory).</li>
+            </ul>
+        </section>
+
+        <section id="reserved-characters">
+            <h2>Reserved Characters</h2>
+            <p>The use of the slash <code>/</code> and double dot <code>..</code> in this case must be respected by all servers. If necessary, this may mean converting their local representations in order that these characters should not appear within path elements (see "escaping").</p>
+        </section>
+
+        <address>
+            <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim BL</a>
+        </address>
+    </div>
+</main>
+
+<div class="accent-stripe" role="presentation"></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-sitemap">
+            <div>
+                <div class="sitemap-title">WWW Project</div>
+                <ul class="sitemap-links">
+                    <li><a href="../www-project/proposal.html">Proposal</a></li>
+                    <li><a href="../www-project/www-project-overview.html">WWW Project Overview</a></li>
+                    <li><a href="../about/policy.html">Project Aim</a></li>
+                    <li><a href="#">Web Book</a></li>
+                    <li><a href="../protocols/http/http-implementation.html">Http Implementation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Hypertext</div>
+                <ul class="sitemap-links">
+                    <li><a href="../hypertext/hypermedia.html">Hypermedia</a></li>
+                    <li><a href="../hypertext/hypertext-terms.html">Hypertext Terms</a></li>
+                    <li><a href="../hypertext/hypertext-timeline.html">Hypertext Timeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Technical</div>
+                <ul class="sitemap-links">
+                    <li><a href="../technical/technical-details.html">Technical Details</a></li>
+                    <li><a href="../software/daemon/w3-server-overview.html">W3 Server Overview</a></li>
+                    <li><a href="../protocols/http/http-protocol.html">Http Protocol</a></li>
+                    <li><a href="../mark-up/markup.html">Markup</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Resources</div>
+                <ul class="sitemap-links">
+                    <li><a href="../about/executive-summary.html">Executive Summary</a></li>
+                    <li><a href="../resources/browser-help.html">Browser Help</a></li>
+                    <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">CERN First Website HTML</a></li>
+                    <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+                    <li><a href="https://cernsite.codercafe.online" target="_blank">CERN Reference Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>NVCC · ITE170 Multimedia Software · Spring 2026</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Mode Browser User Guide - WorldWideWeb</title>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/vendor/pico/pico.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bc98f03675.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-base.css">
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-page.css">
+</head>
+<body>
+    <div class="top-stripe" role="presentation"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <h1 class="site-title">WWW Line Mode Browser</h1>
+        </div>
+    </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="../index.html">Home</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="#">Line Mode</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <span aria-current="page">User Guide</span>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container">
+        <p class="page-intro">The World-Wide Web line-mode browser allows you to find information by following references and/or by using keywords. It is the first cross-platform browser for the World Wide Web, running on any system with a terminal interface.</p>
+
+        <section id="navigation">
+            <h2>Following References</h2>
+            <p>References are numbers in [brackets] after particular phrases. Type the number and <kbd>RETURN</kbd> for more information on the phrase.</p>
+
+            <p>For a <a href="defaults/quick-guide.html">quick guide</a> to the most common commands, see the Quick Reference card.</p>
+        </section>
+
+        <section id="searching">
+            <h2>Searching Index Documents</h2>
+            <p>Some documents are indexes. These contain little text, but allow you to search for information with keywords. Type <code>find</code> or <code>f</code> (space) and the keywords.</p>
+
+            <p>For example:</p>
+            <pre><code>f sgml examples</code></pre>
+            <p>This searches the index for items with keywords SGML and EXAMPLE. You can only use the <code>find</code> command when it is present in the prompt. You can omit the <code>f</code> if the first keyword doesn't conflict with existing commands.</p>
+        </section>
+
+        <section id="commands">
+            <h2>Common Commands</h2>
+            <table>
+                <caption>Line Mode Browser Commands</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&lt;number&gt;</code></td>
+                        <td>Follow the link with that reference number</td>
+                    </tr>
+                    <tr>
+                        <td><code>back</code> or <code>b</code></td>
+                        <td>Go back to the previous document</td>
+                    </tr>
+                    <tr>
+                        <td><code>home</code></td>
+                        <td>Go to the home document</td>
+                    </tr>
+                    <tr>
+                        <td><code>top</code></td>
+                        <td>Go to the top of the current document</td>
+                    </tr>
+                    <tr>
+                        <td><code>up</code></td>
+                        <td>Scroll up one page</td>
+                    </tr>
+                    <tr>
+                        <td><code>next</code></td>
+                        <td>Scroll down one page (or press <kbd>RETURN</kbd>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>find &lt;keywords&gt;</code></td>
+                        <td>Search an index document for keywords</td>
+                    </tr>
+                    <tr>
+                        <td><code>go &lt;address&gt;</code></td>
+                        <td>Navigate to a specific URI address</td>
+                    </tr>
+                    <tr>
+                        <td><code>list</code></td>
+                        <td>List all links in the current document</td>
+                    </tr>
+                    <tr>
+                        <td><code>help</code></td>
+                        <td>Display help information</td>
+                    </tr>
+                    <tr>
+                        <td><code>quit</code> or <code>q</code></td>
+                        <td>Exit the browser</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="further-info">
+            <h2>Further Information</h2>
+            <p>For more detailed information, see:</p>
+            <ul>
+                <li><a href="#">Command line syntax</a></li>
+                <li><a href="#">Shortcuts</a></li>
+                <li><a href="#">Installation</a></li>
+                <li><a href="#">Customization</a></li>
+                <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+            </ul>
+            <p>Please send any bugs and suggestions to <a href="mailto:www-bug@info.cern.ch">www-bug@info.cern.ch</a>.</p>
+        </section>
+
+        <address>
+            <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim BL</a>
+        </address>
+    </div>
+</main>
+
+<div class="accent-stripe" role="presentation"></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-sitemap">
+            <div>
+                <div class="sitemap-title">WWW Project</div>
+                <ul class="sitemap-links">
+                    <li><a href="../www-project/proposal.html">Proposal</a></li>
+                    <li><a href="../www-project/www-project-overview.html">WWW Project Overview</a></li>
+                    <li><a href="../about/policy.html">Project Aim</a></li>
+                    <li><a href="#">Web Book</a></li>
+                    <li><a href="../protocols/http/http-implementation.html">Http Implementation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Hypertext</div>
+                <ul class="sitemap-links">
+                    <li><a href="../hypertext/hypermedia.html">Hypermedia</a></li>
+                    <li><a href="../hypertext/hypertext-terms.html">Hypertext Terms</a></li>
+                    <li><a href="../hypertext/hypertext-timeline.html">Hypertext Timeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Technical</div>
+                <ul class="sitemap-links">
+                    <li><a href="../technical/technical-details.html">Technical Details</a></li>
+                    <li><a href="../software/daemon/w3-server-overview.html">W3 Server Overview</a></li>
+                    <li><a href="../protocols/http/http-protocol.html">Http Protocol</a></li>
+                    <li><a href="../mark-up/markup.html">Markup</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Resources</div>
+                <ul class="sitemap-links">
+                    <li><a href="../about/executive-summary.html">Executive Summary</a></li>
+                    <li><a href="../resources/browser-help.html">Browser Help</a></li>
+                    <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">CERN First Website HTML</a></li>
+                    <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+                    <li><a href="https://cernsite.codercafe.online" target="_blank">CERN Reference Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>NVCC · ITE170 Multimedia Software · Spring 2026</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

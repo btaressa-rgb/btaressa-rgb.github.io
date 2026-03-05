@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Proposal - WorldWideWeb</title>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/vendor/pico/pico.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bc98f03675.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-base.css">
+    <link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-page.css">
+<link rel="stylesheet" href="https://cernsite.codercafe.online/cern-reference/core/styles/cernsite-project-proposal.css">
+
+</head>
+<body>
+    <div class="top-stripe" role="presentation"></div>
+    <a href="proposal.html#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <h1 class="site-title">WorldWideWeb Proposal</h1>
+        </div>
+    </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="../index.html">Home</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <a href="www-project-overview.html">WWW Project</a>
+        <span class="separator" aria-hidden="true">&gt;</span>
+        <span aria-current="page">Proposal</span>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container">
+        <article class="proposal-card">
+            <header class="memo-header">
+                <dl>
+                    <dt>To:</dt>
+                    <dd>P.G. Innocenti/ECP, G. Kellner/ECP, D.O. Williams/CN</dd>
+                    
+                    <dt>Cc:</dt>
+                    <dd>R. Brun/CN, K. Gieselmann/ECP, R. Jones/ECP, T. Osborne/CN, P. Palazzi/ECP, N. Pellow/CN, B. Pollermann/CN, E.M. Rimmer/ECP</dd>
+                    
+                    <dt>From:</dt>
+                    <dd>T. Berners-Lee/CN, R. Cailliau/ECP</dd>
+                    
+                    <dt>Date:</dt>
+                    <dd class="memo-date">12 November 1990</dd>
+                </dl>
+            </header>
+
+            <section class="section-spacer">
+                <p class="page-intro">The attached document describes in more detail a Hypertext project.</p>
+                <p>HyperText is a way to link and access information of various kinds as a web of nodes in which the user can browse at will. It provides a single user-interface to large classes of information (reports, notes, databases, computer documentation and online help). We propose a simple scheme incorporating servers already available at CERN.</p>
+                <p>The project has two phases: firstly, we make use of existing software and hardware as well as implementing simple browsers for the user's workstations. Secondly, we extend the application area by also allowing the users to add new material.</p>
+                <p>Phase one should take 3 months with the full manpower complement; phase two a further 3 months. The manpower required is 4 software engineers and a programmer. Each person will require a state-of-the-art workstation.</p>
+            </section>
+
+            
+
+            <section class="section-spacer">
+                <h2>Abstract</h2>
+                <p>HyperText potentially provides a single user-interface to many large classes of stored information. We propose the implementation of a simple scheme to incorporate several different servers of machine-stored information already available at CERN, including an analysis of the requirements for information access needs by experiments.</p>
+            </section>
+
+            <section class="section-spacer">
+                <h2>Introduction</h2>
+                <p>The current incompatibilities of platforms and tools make it impossible to access existing information through a common interface. There is a potential large benefit from the integration of a variety of systems in a way which allows a user to follow links pointing from one piece of information to another. This forming of a web of information nodes rather than a hierarchical tree is the basic concept behind HyperText.</p>
+            </section>
+
+            <section class="section-spacer">
+                <h2>Hypertext Concepts</h2>
+                <p>A program which provides access to the hypertext world we call a <strong>browser</strong>. When starting a browser, you are presented with a personal hypertext page. Highlighted references (links) can be selected with a mouse to navigate to other nodes in the web.</p>
+                
+                
+
+                <p>The network of links is called a <strong>web</strong>. The web need not be hierarchical; it is not necessary to "climb up a tree" before moving to a different subject. Nodes can reside on different machines, with links pointing across machine boundaries. The expansion of this idea to include diagrams, pictures, sound, and animation is termed <strong>hypermedia</strong>.</p>
+            </section>
+
+            <section class="section-spacer">
+                <h2>Objectives and Scope</h2>
+                <ul>
+                    <li>To provide a common protocol for requesting human-readable information stored at a remote system.</li>
+                    <li>To provide a protocol for automatic information exchange between supplier and consumer.</li>
+                    <li>To provide methods for reading text across a large proportion of computer screens in use at CERN.</li>
+                    <li>To provide a keyword search option in addition to navigational links.</li>
+                    <li>To use public domain software wherever possible and provide W3 software free of charge.</li>
+                </ul>
+            </section>
+
+            <section class="section-spacer">
+                <h2>Architecture and Building Blocks</h2>
+                <p>The architecture consists of data stored on server machines and client processes (browsers) on workstations.</p>
+                
+                
+
+                <h3>The Browser (Client)</h3>
+                <ul>
+                    <li>Performs display of a node using local hardware and software.</li>
+                    <li>Performs traversal of links and manages navigation history.</li>
+                    <li>Negotiates data formats in dialog with the server.</li>
+                </ul>
+
+                <h3>The Server</h3>
+                <ul>
+                    <li>Manages a web of nodes on the host machine.</li>
+                    <li>Negotiates presentation format, performing on-the-fly or cached conversions from internal formats.</li>
+                </ul>
+            </section>
+
+            <section class="section-spacer">
+                <h2>Project Phases</h2>
+                <article>
+                    <h3>Phase 1: Universal Readership (Target: 3 Months)</h3>
+                    <p>Development of browsers for dumb terminals, Macintosh, and NeXTStep workstations. Servers will provide access to Usenet news, CERNVM FIND indexes, and local file systems.</p>
+                </article>
+                <article>
+                    <h3>Phase 2: Collaborative Authorship (Target: 6 Months)</h3>
+                    <p>Allowing readers to create new links and material. This enables annotation of existing data and allows users to link public documents to bug reports or fixes, fostering collaborative authorship.</p>
+                </article>
+            </section>
+
+            <section class="section-spacer">
+                <h2>Resources Required</h2>
+                <p>Specific roles identified include a System Architect, Hyper-Librarian, and Software Engineers for NeXTStep, X-Windows (Motif), IBM Mainframe, Macintosh, and portable C development.</p>
+                <p>Equipment includes state-of-the-art workstations for each developer and support for a development environment using networked file systems (NFS).</p>
+            </section>
+
+            <section class="section-spacer">
+                <h2>References</h2>
+                <dl class="ref-list">
+                    <dt>[1]</dt>
+                    <dd>T. Berners-Lee/CN, <a href="https://cernsite.codercafe.online/cern-reference/www-project/HTandCERN.wn">HyperText and CERN</a>. An explanation of why hypertext is important for the research community.</dd>
+                    <dt>[2]</dt>
+                    <dd>T. Berners-Lee/CN, <a href="https://cernsite.codercafe.online/cern-reference/www-project/DesignIssues/Overview.html">Hypertext Design Issues</a>. A detailed look at models and facilities.</dd>
+                    <dt>[3]</dt>
+                    <dd><a href="https://cernsite.codercafe.online/cern-reference/www-project/TheProject.html">Other documentation</a> on the project stored in hypertext form.</dd>
+                </dl>
+            </section>
+
+            <address>
+                Tim Berners-Lee / CN<br>
+                Robert Cailliau / ECP
+            </address>
+        </article>
+    </div>
+</main>
+
+ <div class="accent-stripe" role="presentation"></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-sitemap">
+            <div>
+                <div class="sitemap-title">WWW Project</div>
+                <ul class="sitemap-links">
+                    <li><a href="proposal.html">Proposal</a></li>
+                    <li><a href="www-project-overview.html">WWW Project Overview</a></li>
+                    <li><a href="../about/policy.html">Project Aim</a></li>
+                    <li><a href="proposal.html#">Web Book</a></li>
+                    <li><a href="../protocols/http/http-implementation.html">Http Implementation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Hypertext</div>
+                <ul class="sitemap-links">
+                    <li><a href="../hypertext/hypermedia.html">Hypermedia</a></li>
+                    <li><a href="../hypertext/hypertext-terms.html">Hypertext Terms</a></li>
+                    <li><a href="../hypertext/hypertext-timeline.html">Hypertext Timeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Technical</div>
+                <ul class="sitemap-links">
+                    <li><a href="../technical/technical-details.html">Technical Details</a></li>
+                    <li><a href="../software/daemon/w3-server-overview.html">W3 Server Overview</a></li>
+                    <li><a href="../protocols/http/http-protocol.html">Http Protocol</a></li>
+                    <li><a href="../mark-up/markup.html">Markup</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sitemap-title">Resources</div>
+                <ul class="sitemap-links">
+                    <li><a href="../about/executive-summary.html">Executive Summary</a></li>
+                    <li><a href="../resources/browser-help.html">Browser Help</a></li>
+                    <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">CERN First Website HTML</a></li>
+                    <li><a href="https://line-mode.cern.ch/" target="_blank">Line Mode Browser Simulator</a></li>
+                    <li><a href="https://cernsite.codercafe.online" target="_blank">CERN Reference Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>NVCC · ITE170 Multimedia Software · Spring 2026</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

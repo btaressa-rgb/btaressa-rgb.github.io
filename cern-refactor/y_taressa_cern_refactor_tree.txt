@@ -1,0 +1,67 @@
+y_taressa — CERN Website Refactor | ITE170 Module 02 Lab 1
+GitHub Pages: https://btaressa-rgb.github.io/cern-refactor/
+Generated: March 05, 2026
+
+btaressa-rgb.github.io/
+├── index.html                          ← Home page (links to CERN project)
+└── cern-refactor/
+    ├── about
+    │   ├── executive-summary.html
+    │   └── policy.html
+    ├── addressing
+    │   ├── notation.html
+    │   ├── relative-naming.html
+    │   └── w3-naming.html
+    ├── administration
+    │   └── mailing
+    ├── data-sources
+    ├── design-issues
+    │   └── versioning.html
+    ├── faq
+    ├── history
+    │   ├── timeline.html
+    │   ├── timetable.html
+    │   └── www-project-history.html
+    ├── hypertext
+    │   ├── hypermedia.html
+    │   ├── hypertext-terms.html
+    │   ├── hypertext-timeline.html
+    │   ├── hypertext.html
+    │   └── xanadu.html
+    ├── index.html
+    ├── line-mode
+    │   ├── defaults
+    │   │   └── quick-guide.html
+    │   ├── doc-ideas.html
+    │   ├── line-mode-browser.html
+    │   └── users-guide.html
+    ├── mail-robot
+    ├── mark-up
+    │   ├── markup.html
+    │   └── sgml.html
+    ├── news
+    ├── next
+    ├── protocols
+    │   ├── http
+    │   │   ├── http-implementation.html
+    │   │   └── http-protocol.html
+    │   └── relevant-protocols.html
+    ├── references
+    │   └── bibliography.html
+    ├── resources
+    │   ├── browser-help.html
+    │   └── help.html
+    ├── software
+    │   ├── daemon
+    │   │   └── w3-server-overview.html
+    │   └── w3-software.html
+    ├── standards
+    │   └── overview.html
+    ├── technical
+    │   ├── related-products.html
+    │   └── technical-details.html
+    ├── tools
+    │   └── overview.html
+    └── www-project
+        ├── proposal.html
+        └── www-project-overview.html

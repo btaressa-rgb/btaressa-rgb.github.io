@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Multimedia work by Yodit Taressa &mdash; video projects, photography, CSS animations, and digital media from ITE 170 at NOVA Annandale." />
+  <title>Multimedia &middot; Yodit Taressa</title>
+  <link rel="stylesheet" href="css/multimedia.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+  <header>
+    <a class="brand" href="index.html" aria-label="Yodit Taressa Home">Yodit<span>Taressa</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="multimedia.html" class="active" aria-current="page">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav" onclick="openMobileNav()">
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation" onclick="closeMobileNav()">&times;</button>
+    <span class="mobile-nav-label">Navigation</span>
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="projects.html" onclick="closeMobileNav()">Projects</a>
+    <a href="multimedia.html" class="active" aria-current="page" onclick="closeMobileNav()">Multimedia</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <div class="mobile-nav-cta"><a href="contact.html" onclick="closeMobileNav()">Let&#39;s Connect &rarr;</a></div>
+  </nav>
+  <main id="main-content" style="padding-top:64px;">
+    <!-- PAGE HERO -->
+    <section class="page-hero hero-gradient" aria-label="Multimedia work">
+      <div class="page-hero-content fade-up">
+        <span class="section-label">Creative Work</span>
+        <h1>Multimedia</h1>
+        <p>Video, photography, animation, and digital media &mdash; visual storytelling through technology.</p>
+      </div>
+    </section>
+    <!-- SCROLLING STRIP -->
+    <section class="scroll-strip" aria-label="Media preview strip" aria-hidden="true">
+      <div class="scroll-track">
+        <div class="scroll-tile" style="background:linear-gradient(135deg,#1a0f2e,#4a90e2);">
+          <span class="scroll-tile-caption">Web Design &middot; Portfolio</span>
+        </div>
+        <div class="scroll-tile" style="background:linear-gradient(135deg,#2a0f20,#804070);">
+          <span class="scroll-tile-caption">Video &middot; Title Card</span>
+        </div>
+        <div class="scroll-tile" style="background:linear-gradient(135deg,#0f1a40,#1a4070);">
+          <span class="scroll-tile-caption">Motion &middot; CSS Animation</span>
+        </div>
+        <div class="scroll-tile" style="background:linear-gradient(135deg,#1a2040,#7c5cff);">
+          <span class="scroll-tile-caption">Photo &middot; Digital</span>
+        </div>
+        <div class="scroll-tile" style="background:linear-gradient(135deg,#3a1040,#0f2040);">
+          <span class="scroll-tile-caption">Animation &middot; Keyframes</span>
+        </div>
+        <div class="scroll-tile" style="background:linear-gradient(135deg,#1a2040,#0f2030);">
+          <span class="scroll-tile-caption">Design &middot; Typography</span>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="scroll-tile" aria-hidden="true" style="background:linear-gradient(135deg,#1a0f2e,#4a90e2);">
+          <span class="scroll-tile-caption">Web Design &middot; Portfolio</span>
+        </div>
+        <div class="scroll-tile" aria-hidden="true" style="background:linear-gradient(135deg,#2a0f20,#804070);">
+          <span class="scroll-tile-caption">Video &middot; Title Card</span>
+        </div>
+        <div class="scroll-tile" aria-hidden="true" style="background:linear-gradient(135deg,#0f1a40,#1a4070);">
+          <span class="scroll-tile-caption">Motion &middot; CSS Animation</span>
+        </div>
+        <div class="scroll-tile" aria-hidden="true" style="background:linear-gradient(135deg,#1a2040,#7c5cff);">
+          <span class="scroll-tile-caption">Photo &middot; Digital</span>
+        </div>
+        <div class="scroll-tile" aria-hidden="true" style="background:linear-gradient(135deg,#3a1040,#0f2040);">
+          <span class="scroll-tile-caption">Animation &middot; Keyframes</span>
+        </div>
+        <div class="scroll-tile" aria-hidden="true" style="background:linear-gradient(135deg,#1a2040,#0f2030);">
+          <span class="scroll-tile-caption">Design &middot; Typography</span>
+        </div>
+      </div>
+    </section>
+    <!-- TABS -->
+    <div class="media-tabs" role="tablist" aria-label="Multimedia categories">
+      <div class="media-tabs-inner">
+        <button class="tab-btn active" onclick="switchTab(this,'tab-video')" role="tab" aria-selected="true" aria-controls="tab-video">&#127916; Videos</button>
+        <button class="tab-btn" onclick="switchTab(this,'tab-photos')" role="tab" aria-selected="false" aria-controls="tab-photos">&#128247; Photography</button>
+        <button class="tab-btn" onclick="switchTab(this,'tab-animation')" role="tab" aria-selected="false" aria-controls="tab-animation">&#10024; Animations</button>
+      </div>
+    </div>
+    <!-- TAB 1: VIDEOS -->
+    <section class="media-section active" id="tab-video" role="tabpanel" aria-label="Video projects">
+      <div class="video-gallery">
+        <div class="section-header fade-up">
+          <span class="section-label">Video Work</span>
+          <h2>Motion &amp; storytelling</h2>
+          <p>Video projects created with footage, editing, and multimedia techniques learned in ITE 170.</p>
+        </div>
+        <!-- CAPSTONE VIDEO HERO -->
+        <div class="video-feature">
+          <div class="video-card fade-up" style="border:2px solid rgba(124,92,255,.35);box-shadow:0 8px 40px rgba(124,92,255,.18);">
+            <div style="position:relative;">
+              <video
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030476850/zqeGRoWrIRQQpjnE.mp4"
+                controls
+                poster="images/capstone_poster.jpg"
+                style="width:100%;border-radius:12px 12px 0 0;display:block;"
+                aria-label="Yodit Taressa ITE 170 Capstone Multimedia Portfolio Video"
+                preload="metadata">
+                Your browser does not support the video tag.
+              </video>
+              <span style="position:absolute;top:12px;left:12px;background:rgba(124,92,255,.9);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:20px;text-transform:uppercase;">&#9733; Capstone Project</span>
+            </div>
+            <div class="video-card-body">
+              <h3>ITE 170 Capstone Multimedia Portfolio</h3>
+              <p>This is my ITE 170 capstone video &mdash; a professionally produced multimedia presentation showcasing the full scope of my work this semester. It highlights web design, responsive layouts, accessibility practices, and creative digital media projects built at NOVA Annandale.</p>
+              <div class="video-tools">
+                <span class="tool-badge">&#9733; Capstone</span>
+                <span class="tool-badge">Video Production</span>
+                <span class="tool-badge">Motion Design</span>
+                <span class="tool-badge">Visual Storytelling</span>
+                <span class="tool-badge">ITE 170</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TAB 2: PHOTOGRAPHY -->
+    <section class="media-section" id="tab-photos" role="tabpanel" aria-label="Photography projects">
+      <div class="image-gallery">
+        <div class="section-header fade-up">
+          <span class="section-label">Photography</span>
+          <h2>Images &amp; visual storytelling</h2>
+          <p>Digital photography and image editing projects &mdash; exploring composition, light, and visual communication.</p>
+        </div>
+        <div class="photo-masonry">
+          <div class="photo-item fade-up">
+            <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400&q=80" alt="Photography project: camera and creative tools on a desk" loading="lazy" />
+            <div class="photo-caption">Digital Photography &middot; Composition Study</div>
+          </div>
+          <div class="photo-item fade-up">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=80" alt="Technology workspace with multiple screens and devices" loading="lazy" />
+            <div class="photo-caption">Technology &middot; Workspace</div>
+          </div>
+          <div class="photo-item fade-up">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Portrait photography study with natural lighting" loading="lazy" />
+            <div class="photo-caption">Portrait &middot; Natural Light</div>
+          </div>
+          <div class="photo-item fade-up">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80" alt="Web design on laptop screen representing digital work" loading="lazy" />
+            <div class="photo-caption">Digital Work &middot; Web Design</div>
+          </div>
+          <div class="photo-item fade-up">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80" alt="Creative design tools and colorful workspace" loading="lazy" />
+            <div class="photo-caption">Creative &middot; Design Tools</div>
+          </div>
+          <div class="photo-item fade-up">
+            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&q=80" alt="Technology and digital creativity abstract" loading="lazy" />
+            <div class="photo-caption">Abstract &middot; Technology</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TAB 3: ANIMATIONS -->
+    <section class="media-section" id="tab-animation" role="tabpanel" aria-label="Animation projects">
+      <div class="animation-gallery">
+        <div class="section-header fade-up">
+          <span class="section-label">CSS Animations</span>
+          <h2>Motion &amp; interaction</h2>
+          <p>CSS keyframe animations, transitions, and interactive effects built with pure CSS and JavaScript.</p>
+        </div>
+        <div class="animation-cards">
+          <div class="animation-card fade-up">
+            <div class="anim-preview" style="background:linear-gradient(135deg,#7c5cff,#ff6b9d);border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;">
+              <div style="width:60px;height:60px;border:4px solid white;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;"></div>
+            </div>
+            <h3>Loading Spinner</h3>
+            <p>A smooth CSS keyframe animation using border-radius and rotation transforms. Built without JavaScript &mdash; pure CSS only.</p>
+            <div class="video-tools">
+              <span class="tool-badge">CSS Keyframes</span>
+              <span class="tool-badge">Transforms</span>
+            </div>
+          </div>
+          <div class="animation-card fade-up">
+            <div class="anim-preview" style="background:linear-gradient(135deg,#0f2040,#4a90e2);border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;gap:12px;">
+              <div style="width:16px;height:16px;background:white;border-radius:50%;animation:bounce 0.8s ease-in-out infinite;"></div>
+              <div style="width:16px;height:16px;background:white;border-radius:50%;animation:bounce 0.8s ease-in-out 0.2s infinite;"></div>
+              <div style="width:16px;height:16px;background:white;border-radius:50%;animation:bounce 0.8s ease-in-out 0.4s infinite;"></div>
+            </div>
+            <h3>Bounce Dots</h3>
+            <p>Staggered animation using animation-delay to create a sequential bouncing effect. Demonstrates timing and easing functions.</p>
+            <div class="video-tools">
+              <span class="tool-badge">CSS Keyframes</span>
+              <span class="tool-badge">Animation Delay</span>
+            </div>
+          </div>
+          <div class="animation-card fade-up">
+            <div class="anim-preview" style="background:linear-gradient(135deg,#3a1040,#804070);border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;">
+              <div style="font-size:2rem;font-weight:700;color:white;animation:pulse 2s ease-in-out infinite;">Yodit Taressa</div>
+            </div>
+            <h3>Text Pulse Animation</h3>
+            <p>A smooth opacity and scale pulse animation applied to text. Used for hero sections and call-to-action elements to draw attention.</p>
+            <div class="video-tools">
+              <span class="tool-badge">CSS Keyframes</span>
+              <span class="tool-badge">Opacity</span>
+              <span class="tool-badge">Scale</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TOOLS SECTION -->
+    <section class="tools-section">
+      <div class="tools-inner fade-up">
+        <span class="section-label">What I Use</span>
+        <h2>My Creative Tools</h2>
+        <div class="tool-cards">
+          <div class="tool-card fade-up">
+            <div class="tool-icon"><i class="ph ph-code" aria-hidden="true"></i></div>
+            <span>HTML / CSS / JS</span>
+          </div>
+          <div class="tool-card fade-up">
+            <div class="tool-icon"><i class="ph ph-film-strip" aria-hidden="true"></i></div>
+            <span>Video Editing</span>
+          </div>
+          <div class="tool-card fade-up">
+            <div class="tool-icon"><i class="ph ph-camera" aria-hidden="true"></i></div>
+            <span>Digital Photography</span>
+          </div>
+          <div class="tool-card fade-up">
+            <div class="tool-icon"><i class="ph ph-palette" aria-hidden="true"></i></div>
+            <span>Adobe Creative Suite</span>
+          </div>
+          <div class="tool-card fade-up">
+            <div class="tool-icon"><i class="ph ph-cloud-arrow-up" aria-hidden="true"></i></div>
+            <span>Netlify</span>
+          </div>
+          <div class="tool-card fade-up">
+            <div class="tool-icon"><i class="ph ph-github-logo" aria-hidden="true"></i></div>
+            <span>GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Thanks for visiting.</h2>
+          <p>Explore more of my work &mdash; projects, web design, and the skills behind them.</p>
+        </div>
+        <a href="projects.html" class="btn-primary">View My Projects &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 <strong style="color:rgba(255,255,255,.75);">Yodit Taressa</strong> &middot; ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</p>
+    <p style="margin-top:8px;font-size:.85rem;opacity:.7;">Prefer less motion? <a href="no-animations/multimedia.html" style="color:inherit;text-decoration:underline;">Reduced-motion version &rarr;</a></p>
+  </footer>
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    @keyframes pulse { 0%,100% { opacity:1;transform:scale(1); } 50% { opacity:.6;transform:scale(.95); } }
+  </style>
+  <script>
+    function switchTab(btn, tabId) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected','false');
+      });
+      document.querySelectorAll('.media-section').forEach(function(s) { s.classList.remove('active'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function openMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.add('open');
+      document.getElementById('mobileOverlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+      nav.setAttribute('aria-hidden','false');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','true');
+    }
+    function closeMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('show');
+      document.body.style.overflow = '';
+      nav.setAttribute('aria-hidden','true');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','false');
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
+
+
+    var observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  </script>
+</body>
+</html>

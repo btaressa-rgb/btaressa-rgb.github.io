@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – My Portfolio</title>
+
+  <!-- ============================================================
+    ★ HOW TO FIND CSS FOR THIS PAGE  (read me!)
+    ──────────────────────────────────────────────────────────
+    All styles for this page live in:  css/projects.css
+
+    TO FIND THE STYLE FOR AN ELEMENT ON THIS PAGE:
+
+      1. Look at the element in the HTML and find its class.
+         Example:  <section class="page-hero">
+         The class is:  page-hero
+
+      2. Open css/projects.css
+
+      3. Press Cmd+F (Mac) or Ctrl+F (Windows) to search.
+         IMPORTANT — put a DOT before the class name:
+           Search:  .page-hero   ← correct (usually 1 rule)
+           Search:  page-hero    ← too many matches
+           Search:  hero         ← way too many matches
+
+    PAGE SECTIONS (in order they appear in css/projects.css):
+
+      1. VARIABLES & RESET  →  :root, body
+      2. HEADER             →  header, .brand, .desktop-nav
+      3. PAGE HERO          →  .page-hero, .page-hero h1
+      4. FILTER BAR         →  .filter-bar, .filter-btn
+      5. PROJECT CARDS      →  .project-card, .card-body
+      6. FEATURED PROJECT   →  .featured-project, .featured-visual
+      7. CTA & FOOTER       →  .cta-band, footer
+      8. ANIMATIONS         →  @keyframes, @media queries
+
+    TIP: Jump to a section by searching for the number with a
+    period (e.g. "4.") or the section title (e.g. "HERO").
+  ============================================================ -->
+  <link rel="stylesheet" href="css/projects.css" />
+</head>
+
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <a class="brand" href="index.html">Your<span>Portfolio</span></a>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Open menu" onclick="toggleMobileNav()"><span></span></button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html"      onclick="toggleMobileNav()">Home</a>
+    <a href="about.html"      onclick="toggleMobileNav()">About</a>
+    <a href="projects.html" class="active" onclick="toggleMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="toggleMobileNav()">Multimedia</a>
+    <a href="contact.html"    onclick="toggleMobileNav()">Contact</a>
+  </nav>
+
+  <main style="padding-top:64px;">
+
+    <!-- ── PAGE HERO ──
+      Pick ONE background style by setting the section's class:
+         class="page-hero hero-gradient"  →  animated gradient (no asset)
+         class="page-hero hero-image"     →  uncomment the <img>  below
+         class="page-hero hero-video"     →  uncomment the <video> below
+      Only ONE media element should be active at a time.
+    ── -->
+    <section class="page-hero hero-gradient">
+
+      <!-- (B) IMAGE OPTION — uncomment, set class="page-hero hero-image" above
+      <img
+        class="page-hero-media"
+        src="https://placehold.co/1920x1080?text=Projects+Hero"
+        alt="" aria-hidden="true" />
+      -->
+
+      <!-- (C) VIDEO OPTION — uncomment, set class="page-hero hero-video" above
+      <video
+        class="page-hero-media"
+        autoplay muted loop playsinline
+        poster="https://placehold.co/1920x1080?text=Projects+Hero+Video">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      </video>
+      -->
+
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow">My Work</span>
+        <h1>Projects</h1>
+        <p>Web builds, design work, and digital experiments from ITE 170 and beyond.</p>
+      </div>
+    </section>
+
+    <!-- ── FILTER BAR ──
+      Clicking a button shows only cards with matching data-category.
+      "All" shows everything.
+      ★ Add or remove category buttons to match YOUR project types ★
+    ── -->
+    <div class="filter-bar">
+      <div class="filter-inner">
+        <button class="filter-btn active" data-filter="all" onclick="filterProjects(this,'all')">All Projects</button>
+        <button class="filter-btn" data-filter="html-css"   onclick="filterProjects(this,'html-css')">HTML / CSS</button>
+        <button class="filter-btn" data-filter="tailwind"   onclick="filterProjects(this,'tailwind')">Tailwind</button>
+        <button class="filter-btn" data-filter="javascript" onclick="filterProjects(this,'javascript')">JavaScript</button>
+        <button class="filter-btn" data-filter="multimedia" onclick="filterProjects(this,'multimedia')">Multimedia</button>
+        <button class="filter-btn" data-filter="design"     onclick="filterProjects(this,'design')">UI Design</button>
+      </div>
+    </div>
+
+    <!-- ── PROJECT CARDS ──
+      Each card has a data-category attribute that matches filter buttons.
+      ★ REPLACE every placeholder below with your REAL projects ★
+
+      ── CARD THUMB OPTIONS ──
+      Each card's media area can use ONE of three styles:
+
+      (A) GRADIENT / COLOR  — no asset required
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#804070,#4a1040);">
+            ...badges...
+          </div>
+
+      (B) IMAGE  — drop in a screenshot or photo
+          <div class="card-thumb thumb-image">
+            <img class="thumb-media" src="https://placehold.co/600x400?text=Project+1" alt="..." />
+            ...badges...
+          </div>
+
+      (C) VIDEO  — silent looping clip (great for motion projects)
+          <div class="card-thumb thumb-video">
+            <video class="thumb-media" autoplay muted loop playsinline
+                   poster="https://placehold.co/600x400?text=Project+1+Video">
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            </video>
+            ...badges...
+          </div>
+    ── -->
+    <section class="projects-section">
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- ──────────────────────────────────────────────
+          PROJECT 1  ·  EXAMPLE: GRADIENT thumb
+          ★ Replace: screenshot, category, title, description, tech tags, and live URL
+        ────────────────────────────────────────────── -->
+        <a class="project-card fade-up" data-category="html-css" href="#" aria-label="View Project 1">
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#804070,#4a1040);">
+            <span class="card-tag">HTML / CSS</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Photography Grid</h3>
+            <p>
+              A responsive CSS Grid photo gallery deployed live on Netlify.
+              Features hover captions and object-cover image fitting.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS Grid</span>
+              <span class="tech-tag">Netlify</span>
+            </div>
+            <!-- ★ Replace # with your actual Netlify URL -->
+            <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 2  ·  EXAMPLE: IMAGE thumb
+             Replace src with your real screenshot. Until then, the dark
+             card-thumb background shows through if the image fails to load. -->
+        <a class="project-card fade-up" data-category="tailwind" href="#" aria-label="View Project 2">
+          <div class="card-thumb thumb-image"
+               style="--thumb-grad: linear-gradient(135deg,#1a0f2e,#4a90e2); background: var(--thumb-grad);">
+            <!-- ★ When you have a real screenshot, uncomment + update the path:
+            <img class="thumb-media"
+                 src="https://placehold.co/600x400?text=Project+2"
+                 alt="Product Landing Page screenshot" />
+            -->
+            <span class="card-tag">Tailwind CSS</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Product Landing Page</h3>
+            <p>
+              A product or business landing page built with Tailwind CSS utility classes.
+              Responsive across mobile, tablet, and desktop.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Flexbox</span>
+              <span class="tech-tag">CSS Grid</span>
+            </div>
+            <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 3  ·  EXAMPLE: VIDEO thumb
+             Use a short, silent, looping clip (5–10s) that previews the project.
+             A poster image shows before the video loads. -->
+        <a class="project-card fade-up" data-category="javascript" href="#" aria-label="View Project 3">
+          <div class="card-thumb thumb-video"
+               style="--thumb-grad: linear-gradient(135deg,#0f2040,#1a0f2e); background: var(--thumb-grad);">
+            <!-- ★ When you have a real clip, uncomment + update the paths:
+            <video class="thumb-media"
+                   autoplay muted loop playsinline
+                   poster="https://placehold.co/600x400?text=Project+3+Video">
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            </video>
+            -->
+            <span class="card-tag">JavaScript</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Interactive Project Title</h3>
+            <p>
+              Describe your JavaScript project here — what does it do?
+              What interaction or functionality did you build?
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">DOM API</span>
+              <span class="tech-tag">HTML5</span>
+            </div>
+            <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 4  ·  Using GRADIENT (swap to thumb-image / thumb-video any time) -->
+        <a class="project-card fade-up" data-category="multimedia" href="#" aria-label="View Project 4">
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#2a0f20,#804070);">
+            <span class="card-tag">Multimedia</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Multimedia Story Project</h3>
+            <p>
+              A multimedia-driven web page combining video, animation,
+              and storytelling. Describe your project theme here.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">Video</span>
+              <span class="tech-tag">CSS Animation</span>
+              <span class="tech-tag">HTML5</span>
+            </div>
+            <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 5  ·  Using GRADIENT (swap to thumb-image / thumb-video any time) -->
+        <a class="project-card fade-up" data-category="design" href="#" aria-label="View Project 5">
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#0f1a40,#1a4070);">
+            <span class="card-tag">UI Design</span>
+            <span class="card-status progress">In Progress</span>
+          </div>
+          <div class="card-body">
+            <h3>UI / UX Design Project</h3>
+            <p>
+              A wireframe or prototype project — could be a Figma design
+              or a coded UI layout. Describe your design decisions here.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">UI Design</span>
+            </div>
+            <span class="card-link">View Prototype <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 6  ·  Add more projects as needed! -->
+        <a class="project-card fade-up" data-category="html-css" href="#" aria-label="View Project 6">
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#1a2040,#0f2030);">
+            <span class="card-tag">HTML / CSS</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Another Project Title</h3>
+            <p>
+              ★ Keep adding projects! Each completed assignment becomes a card here.
+              By end of semester you should have 6–10+ cards.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+            <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+      </div><!-- end .projects-grid -->
+    </section>
+
+    <!-- ── FEATURED PROJECT ──
+      Highlight your BEST project with a larger, more detailed section.
+      ★ Replace with your proudest ITE 170 achievement ★
+    ── -->
+    <section class="featured-project">
+      <div class="featured-inner fade-up">
+
+        <!-- LEFT: Screenshot or visual -->
+        <div class="featured-visual">
+          <!--
+            ★ Replace placeholder with your best project screenshot:
+            <img src="https://placehold.co/800x600?text=Featured+Project" alt="Featured Project" />
+          -->
+          <div class="featured-placeholder">
+            <span>⭐</span>
+            <p>Add your best project screenshot<br/>images/featured-project.jpg</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Project details -->
+        <div class="featured-text">
+          <div class="featured-badge">⭐ Featured Project</div>
+
+          <!-- ★ Replace with your best project name -->
+          <h2>Your Best Project Title</h2>
+
+          <!-- ★ Replace with a detailed description -->
+          <p>
+            This is where you describe your featured project in depth.
+            What was the goal? What did you build? What challenges did
+            you overcome? What are you most proud of?
+          </p>
+
+          <!-- What you learned / achieved -->
+          <ul class="outcomes">
+            <!-- ★ Replace with YOUR actual outcomes from this project -->
+            <li>Deployed a live website for the first time</li>
+            <li>Built a fully responsive layout from scratch</li>
+            <li>Learned to debug CSS without external help</li>
+            <li>Received positive feedback from instructor</li>
+          </ul>
+
+          <!-- Action buttons -->
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+            <!-- ★ Replace # with your live URL -->
+            <a href="#" class="btn-primary">View Live Site →</a>
+            <!-- ★ Replace # with GitHub link if you have one -->
+            <a href="#" class="btn-secondary">View Code</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Want to see my multimedia work?</h2>
+          <p>Video, animation, and interactive media projects from the semester.</p>
+        </div>
+        <a href="multimedia.html" class="btn-primary">Explore Multimedia →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Yodit Taressa · Web and Multimedia · NOVA Annandale</p>
+    <!-- Cross-link back to the animated version of this same page. -->
+    <p style="margin-top:8px;font-size:.85rem;opacity:.8;">
+      Viewing reduced-motion version · <a href="../projects.html" style="color:inherit;text-decoration:underline;">Standard version →</a>
+    </p>
+  </footer>
+
+  <script>
+    // ── MOBILE NAV ──
+    function toggleMobileNav() {
+      document.getElementById("mobileNav").classList.toggle("open");
+    }
+    document.addEventListener("click", function(e) {
+      const nav = document.getElementById("mobileNav");
+      const toggle = document.querySelector(".mobile-toggle");
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove("open");
+    });
+
+    // ── PROJECT FILTER ──
+    // When a filter button is clicked, loop through all .project-card elements.
+    // If the card's data-category matches the filter, show it; otherwise hide it.
+    function filterProjects(btn, category) {
+      // 1. Update button styling — remove active from all, add to clicked
+      document.querySelectorAll(".filter-btn").forEach(function(b) {
+        b.classList.remove("active");
+      });
+      btn.classList.add("active");
+
+      // 2. Show/hide cards based on their data-category attribute
+      document.querySelectorAll(".project-card").forEach(function(card) {
+        if (category === "all") {
+          // "All" shows every card
+          card.classList.remove("hidden");
+        } else if (card.dataset.category === category) {
+          // Matching category — show it
+          card.classList.remove("hidden");
+        } else {
+          // Does not match — hide it
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    // ── SCROLL ANIMATIONS ──
+    const observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+    document.querySelectorAll(".fade-up").forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – My Portfolio</title>
+
+  <!-- ============================================================
+    ★ HOW TO FIND CSS FOR THIS PAGE  (read me!)
+    ──────────────────────────────────────────────────────────
+    All styles for this page live in:  css/about.css
+
+    TO FIND THE STYLE FOR AN ELEMENT ON THIS PAGE:
+
+      1. Look at the element in the HTML and find its class.
+         Example:  <section class="page-hero">
+         The class is:  page-hero
+
+      2. Open css/about.css
+
+      3. Press Cmd+F (Mac) or Ctrl+F (Windows) to search.
+         IMPORTANT — put a DOT before the class name:
+           Search:  .page-hero   ← correct (usually 1 rule)
+           Search:  page-hero    ← too many matches
+           Search:  hero         ← way too many matches
+
+    PAGE SECTIONS (in order they appear in css/about.css):
+
+      1. VARIABLES & RESET  →  :root, body
+      2. HEADER             →  header, .brand, .desktop-nav
+      3. PAGE HERO          →  .page-hero, .page-hero h1
+      4. BIO SPLIT          →  .bio-split, .bio-text, .bio-photo
+      5. SKILLS GRID        →  .skills-grid, .skill-card
+      6. TIMELINE           →  .timeline, .timeline-item
+      7. VALUES             →  .values, .value-card
+      8. CTA & FOOTER       →  .cta-band, footer
+      9. ANIMATIONS         →  @keyframes, @media queries
+
+    TIP: Jump to a section by searching for the number with a
+    period (e.g. "4.") or the section title (e.g. "HERO").
+  ============================================================ -->
+  <link rel="stylesheet" href="css/about.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <a class="brand" href="index.html">Your<span>Portfolio</span></a>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Open menu" onclick="toggleMobileNav()"><span></span></button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html"      onclick="toggleMobileNav()">Home</a>
+    <a href="about.html" class="active" onclick="toggleMobileNav()">About</a>
+    <a href="projects.html"   onclick="toggleMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="toggleMobileNav()">Multimedia</a>
+    <a href="contact.html"    onclick="toggleMobileNav()">Contact</a>
+  </nav>
+
+  <main style="padding-top:64px;">
+
+    <!-- ── PAGE HERO ──
+      Pick ONE background style by setting the section's class:
+         class="page-hero hero-gradient"  →  animated gradient (no asset)
+         class="page-hero hero-image"     →  uncomment the <img>  below
+         class="page-hero hero-video"     →  uncomment the <video> below
+      Only ONE media element should be active at a time.
+    ── -->
+    <section class="page-hero hero-gradient">
+
+      <!-- (B) IMAGE OPTION — uncomment, set class="page-hero hero-image" above
+      <img
+        class="page-hero-media"
+        src="https://placehold.co/1920x1080?text=About+Hero"
+        alt="" aria-hidden="true" />
+      -->
+
+      <!-- (C) VIDEO OPTION — uncomment, set class="page-hero hero-video" above
+      <video
+        class="page-hero-media"
+        autoplay muted loop playsinline
+        poster="https://placehold.co/1920x1080?text=About+Hero+Video">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      </video>
+      -->
+
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow">
+          <i class="ph-fill ph-sparkle" aria-hidden="true"></i>
+          About Me
+        </span>
+        <!-- ★ Replace with your name -->
+        <h1>Hi, I'm Yodit Taressa</h1>
+        <!-- ★ Replace with your short tagline -->
+        <p>Student at NOVA · Web creator · Multimedia storyteller</p>
+
+        <!-- Decorative icon strip — quick visual summary of what you do -->
+        <div class="page-hero-icons" aria-hidden="true">
+          <i class="ph ph-code" title="Code"></i>
+          <i class="ph ph-palette" title="Design"></i>
+          <i class="ph ph-film-strip" title="Multimedia"></i>
+          <i class="ph ph-rocket-launch" title="Ship it"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BIO SECTION ──
+      LEFT: Your photo
+      RIGHT: Who you are, where you are from, your goals
+      ★ Replace ALL placeholder text below ★
+    ── -->
+    <section class="bio-section">
+      <div class="bio-inner">
+
+        <!-- Profile photo -->
+        <div class="bio-photo fade-up">
+          <div class="bio-photo-frame">
+            <!--
+              HOW TO ADD YOUR PHOTO:
+              1. Save a headshot to images/profile.jpg
+              2. Remove the placeholder div below
+              3. Uncomment the img tag:
+              <img src="https://placehold.co/400x400?text=Profile+Photo" alt="Yodit Taressa" />
+            -->
+            <div class="bio-photo-placeholder">
+              <span>📷</span>
+              <p>Add your profile photo here<br/>images/profile.jpg</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio text -->
+        <div class="bio-text fade-up">
+
+          <span class="section-label">My Story</span>
+
+          <!-- ★ Replace with your name -->
+          <h2>Your Full Name</h2>
+
+          <!-- ★ Replace with your story — 2-3 paragraphs -->
+          <p>
+            Write your first paragraph here. Tell visitors who you are —
+            where you are from, what brought you to NOVA, and why you are
+            studying web and multimedia. Be genuine and specific.
+          </p>
+          <p>
+            Write your second paragraph here. What are you hoping to do
+            with what you are learning? Talk about your interests, goals,
+            or what excites you about web design and multimedia.
+          </p>
+          <p>
+            Third paragraph (optional): Something fun or personal —
+            hobbies, interests, what you do outside of class. Let your
+            personality come through.
+          </p>
+
+          <!-- Fun facts grid — quick stats about you -->
+          <div class="bio-facts">
+            <!-- ★ Replace each label and value with your own info -->
+            <div class="bio-fact">
+              <div class="bio-fact-icon"><i class="ph ph-map-pin" aria-hidden="true"></i></div>
+              <div class="bio-fact-label">Location</div>
+              <div class="bio-fact-value">Northern Virginia</div>
+            </div>
+            <div class="bio-fact">
+              <div class="bio-fact-icon"><i class="ph ph-graduation-cap" aria-hidden="true"></i></div>
+              <div class="bio-fact-label">Program</div>
+              <div class="bio-fact-value">IT / Multimedia</div>
+            </div>
+            <div class="bio-fact">
+              <div class="bio-fact-icon"><i class="ph ph-star" aria-hidden="true"></i></div>
+              <div class="bio-fact-label">Semester</div>
+              <div class="bio-fact-value">Spring 2025</div>
+            </div>
+            <div class="bio-fact">
+              <div class="bio-fact-icon"><i class="ph ph-lightbulb" aria-hidden="true"></i></div>
+              <div class="bio-fact-label">Passion</div>
+              <!-- ★ Replace with YOUR passion -->
+              <div class="bio-fact-value">Web Design</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS GRID ──
+      Showcase the tools and technologies you have learned.
+      ★ Add, remove, or replace skill cards to match YOUR skills ★
+    ── -->
+    <section class="skills-section">
+      <div class="skills-header fade-up">
+        <span class="section-label">Skills & Tools</span>
+        <h2>What I work with</h2>
+        <p>Technologies and tools I have learned and practiced in Web and Multimedia.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- SKILL CARD — HTML -->
+        <div class="skill-card fade-up">
+          <div class="skill-icon"><i class="ph ph-file-html" aria-hidden="true"></i></div>
+          <div class="skill-name">HTML5</div>
+          <div class="skill-desc">Semantic markup, accessibility, structure and meaning.</div>
+          <div class="skill-bar-track">
+            <!-- ★ Adjust width to reflect YOUR skill level (out of 100%) -->
+            <div class="skill-bar-fill" style="width:90%;"></div>
+          </div>
+        </div>
+
+        <!-- SKILL CARD — CSS -->
+        <div class="skill-card fade-up">
+          <div class="skill-icon"><i class="ph ph-file-css" aria-hidden="true"></i></div>
+          <div class="skill-name">CSS3</div>
+          <div class="skill-desc">Layouts, animations, Flexbox, Grid, responsive design.</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="width:85%;"></div>
+          </div>
+        </div>
+
+        <!-- SKILL CARD — Tailwind -->
+        <div class="skill-card fade-up">
+          <div class="skill-icon"><i class="ph ph-wind" aria-hidden="true"></i></div>
+          <div class="skill-name">Tailwind CSS</div>
+          <div class="skill-desc">Utility-first styling, rapid UI development, responsive classes.</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="width:75%;"></div>
+          </div>
+        </div>
+
+        <!-- SKILL CARD — JavaScript -->
+        <div class="skill-card fade-up">
+          <div class="skill-icon"><i class="ph ph-lightning" aria-hidden="true"></i></div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-desc">Interactivity, DOM manipulation, event handling.</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="width:65%;"></div>
+          </div>
+        </div>
+
+        <!-- SKILL CARD — Add your own! -->
+        <div class="skill-card fade-up">
+          <!-- ★ Replace icon, name, and description with another skill you have -->
+          <div class="skill-icon"><i class="ph ph-film-slate" aria-hidden="true"></i></div>
+          <div class="skill-name">Video Editing</div>
+          <div class="skill-desc">Replace with your own skill — e.g. Figma, Photoshop, etc.</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="width:70%;"></div>
+          </div>
+        </div>
+
+        <!-- SKILL CARD — Deployment -->
+        <div class="skill-card fade-up">
+          <div class="skill-icon"><i class="ph ph-rocket-launch" aria-hidden="true"></i></div>
+          <div class="skill-name">Netlify</div>
+          <div class="skill-desc">Deploying live websites — turning local files into public URLs.</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="width:80%;"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── COURSE TIMELINE ──
+      A visual history of courses / learning milestones.
+      ★ Update each item with YOUR courses and descriptions ★
+    ── -->
+    <section class="edu-section">
+      <div class="edu-inner">
+        <span class="section-label fade-up">Education</span>
+        <h2 class="fade-up">My learning journey</h2>
+
+        <div class="timeline">
+
+          <!-- CURRENT course — use class="active" on the dot -->
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot active"><i class="ph ph-star" aria-hidden="true"></i></div>
+            <div class="timeline-content">
+              <div class="meta">Current · Spring 2025</div>
+              <!-- ★ Replace with your current course -->
+              <h3>ITE 170 — Multimedia & Web Development</h3>
+              <p>
+                Building responsive websites with HTML, CSS, and Tailwind.
+                Projects include a photography grid, product landing page, and
+                this portfolio — all deployed live on Netlify.
+              </p>
+            </div>
+          </div>
+
+          <!-- COMPLETED courses / milestones -->
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot done"><i class="ph ph-check" aria-hidden="true"></i></div>
+            <div class="timeline-content">
+              <div class="meta">Fall 2024</div>
+              <!-- ★ Replace with your previous course or experience -->
+              <h3>Previous Course or Experience</h3>
+              <p>Describe what you learned or did here. Could be a previous course, job, or project that brought you to this point.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot done"><i class="ph ph-check" aria-hidden="true"></i></div>
+            <div class="timeline-content">
+              <div class="meta">Before NOVA</div>
+              <!-- ★ High school, work, personal learning, etc. -->
+              <h3>What brought you to web design?</h3>
+              <p>Talk about your background — where you started, what sparked your interest in technology or design.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VALUES / APPROACH CARDS ──
+      What guides your work as a designer/developer.
+      ★ Make these YOUR values — be authentic ★
+    ── -->
+    <section class="values-section">
+      <div class="values-inner">
+        <span class="section-label fade-up">How I Work</span>
+        <h2 class="fade-up">My approach</h2>
+
+        <div class="values-grid">
+
+          <div class="value-card fade-up">
+            <!-- ★ Replace icon and text with your own approach -->
+            <div class="icon"><i class="ph ph-target" aria-hidden="true"></i></div>
+            <h3>Intentional Design</h3>
+            <p>Every decision has a reason. Good design isn't decoration — it solves problems and guides people toward a goal.</p>
+          </div>
+
+          <div class="value-card fade-up">
+            <div class="icon"><i class="ph ph-wheelchair" aria-hidden="true"></i></div>
+            <h3>Accessibility First</h3>
+            <p>Great websites work for everyone. I include alt text, semantic HTML, and sufficient color contrast in every project.</p>
+          </div>
+
+          <div class="value-card fade-up">
+            <div class="icon"><i class="ph ph-device-mobile" aria-hidden="true"></i></div>
+            <h3>Mobile Responsive</h3>
+            <p>I test every project on my phone. If it doesn't work on mobile, it isn't finished.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Ready to see my work?</h2>
+          <p>Browse my projects to see these skills in action.</p>
+        </div>
+        <a href="projects.html" class="btn-primary">View Projects →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Yodit Taressa · Web and Multimedia · NOVA Annandale</p>
+    <!-- Cross-link back to the animated version of this same page. -->
+    <p style="margin-top:8px;font-size:.85rem;opacity:.8;">
+      Viewing reduced-motion version · <a href="../about.html" style="color:inherit;text-decoration:underline;">Standard version →</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      document.getElementById("mobileNav").classList.toggle("open");
+    }
+    document.addEventListener("click", function(e) {
+      const nav = document.getElementById("mobileNav");
+      const toggle = document.querySelector(".mobile-toggle");
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove("open");
+    });
+    const observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+    document.querySelectorAll(".fade-up").forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>

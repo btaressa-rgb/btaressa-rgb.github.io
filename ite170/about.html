@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Yodit Taressa &mdash; Information Systems Technology student at NOVA Annandale with a passion for web design, multimedia, and technology solutions." />
+  <title>About &middot; Yodit Taressa</title>
+  <link rel="stylesheet" href="css/about.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+  <header>
+    <a class="brand" href="index.html" aria-label="Yodit Taressa Home">Yodit<span>Taressa</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active" aria-current="page">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav" onclick="openMobileNav()">
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation" onclick="closeMobileNav()">&times;</button>
+    <span class="mobile-nav-label">Navigation</span>
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" class="active" aria-current="page" onclick="closeMobileNav()">About</a>
+    <a href="projects.html" onclick="closeMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="closeMobileNav()">Multimedia</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <div class="mobile-nav-cta"><a href="contact.html" onclick="closeMobileNav()">Let&#39;s Connect &rarr;</a></div>
+  </nav>
+  <main id="main-content" style="padding-top:64px;">
+    <!-- PAGE HERO -->
+    <section class="page-hero hero-gradient" aria-label="About Yodit Taressa">
+      <div class="page-hero-content fade-up">
+        <span class="section-label">About Me</span>
+        <h1>Yodit Taressa</h1>
+        <p>Information Systems Technology student &middot; Web Designer &middot; Digital Creator</p>
+      </div>
+    </section>
+    <!-- BIO SECTION -->
+    <section class="bio-section">
+      <div class="bio-inner">
+        <div class="bio-visual fade-up">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Professional workspace representing Yodit's work environment" loading="lazy" style="border-radius:16px;width:100%;object-fit:cover;max-height:420px;" />
+        </div>
+        <div class="bio-text fade-up">
+          <span class="section-label">My Story</span>
+          <h2>Hello, I&#39;m Yodit.</h2>
+          <p>I&#39;m an Information Systems Technology student at Northern Virginia Community College (NOVA), Annandale campus. My journey into technology started with a curiosity about how digital experiences are built &mdash; and that curiosity has grown into a genuine passion for web design, multimedia, and creative technology solutions.</p>
+          <p>I believe that technology should be accessible to everyone. Whether I&#39;m building a responsive website, editing a video, or organizing a digital project, I bring the same commitment: make it work beautifully for every user, on every device.</p>
+          <p>Outside of coursework, I&#39;m drawn to the intersection of creativity and technology &mdash; where design thinking meets real-world problem-solving. I enjoy customer service, project organization, and finding digital solutions that make people&#39;s lives easier.</p>
+        </div>
+      </div>
+    </section>
+    <!-- SKILLS SECTION -->
+    <section class="skills-section">
+      <div class="skills-inner">
+        <span class="section-label fade-up">What I Know</span>
+        <h2 class="fade-up">Skills &amp; Strengths</h2>
+        <div class="skills-grid">
+          <div class="skill-card fade-up">
+            <div class="skill-icon"><i class="ph ph-code" aria-hidden="true"></i></div>
+            <h3>Web Development</h3>
+            <p>HTML5, CSS3, JavaScript, Tailwind CSS. I hand-code responsive, semantic websites from scratch.</p>
+          </div>
+          <div class="skill-card fade-up">
+            <div class="skill-icon"><i class="ph ph-film-strip" aria-hidden="true"></i></div>
+            <h3>Multimedia &amp; Design</h3>
+            <p>Video editing, digital photography, CSS animation, and Adobe Creative Suite for visual storytelling.</p>
+          </div>
+          <div class="skill-card fade-up">
+            <div class="skill-icon"><i class="ph ph-wheelchair" aria-hidden="true"></i></div>
+            <h3>Accessibility</h3>
+            <p>WCAG AA compliance, semantic HTML, alt text, keyboard navigation, and inclusive design practices.</p>
+          </div>
+          <div class="skill-card fade-up">
+            <div class="skill-icon"><i class="ph ph-device-mobile" aria-hidden="true"></i></div>
+            <h3>Responsive Design</h3>
+            <p>Mobile-first layouts using CSS Grid and Flexbox. Every project tested across all screen sizes.</p>
+          </div>
+          <div class="skill-card fade-up">
+            <div class="skill-icon"><i class="ph ph-cloud-arrow-up" aria-hidden="true"></i></div>
+            <h3>Deployment</h3>
+            <p>Netlify deployment, GitHub version control, and live site management for real-world projects.</p>
+          </div>
+          <div class="skill-card fade-up">
+            <div class="skill-icon"><i class="ph ph-briefcase" aria-hidden="true"></i></div>
+            <h3>Business Technology</h3>
+            <p>Microsoft Office, project organization, customer service, and technology solutions for business needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- EDUCATION TIMELINE -->
+    <section class="edu-section">
+      <div class="edu-inner">
+        <span class="section-label fade-up">Education</span>
+        <h2 class="fade-up">My learning journey</h2>
+        <div class="timeline">
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot active"><i class="ph ph-star" aria-hidden="true"></i></div>
+            <div class="timeline-content">
+              <div class="meta">Current &middot; Spring 2025</div>
+              <h3>ITE 170 &mdash; Multimedia &amp; Web Development</h3>
+              <p>Building responsive websites with HTML, CSS, and JavaScript. Projects include a photography grid, product landing page, and this portfolio &mdash; all deployed live on Netlify. Focused on accessibility, visual design principles, and real-world deployment.</p>
+            </div>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot done"><i class="ph ph-check" aria-hidden="true"></i></div>
+            <div class="timeline-content">
+              <div class="meta">Fall 2024</div>
+              <h3>Information Systems Technology &mdash; Foundations</h3>
+              <p>Explored the fundamentals of information systems, computer hardware, software applications, and digital literacy. Developed a strong foundation in how technology supports business and personal productivity.</p>
+            </div>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot done"><i class="ph ph-check" aria-hidden="true"></i></div>
+            <div class="timeline-content">
+              <div class="meta">Before NOVA</div>
+              <h3>Where It All Started</h3>
+              <p>My interest in technology began with a fascination for how digital tools could solve everyday problems and connect people. Customer service experience taught me the importance of clear communication and user-centered thinking &mdash; skills I now bring to every web project I build.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- VALUES -->
+    <section class="values-section">
+      <div class="values-inner">
+        <span class="section-label fade-up">How I Work</span>
+        <h2 class="fade-up">My approach</h2>
+        <div class="values-grid">
+          <div class="value-card fade-up">
+            <div class="icon"><i class="ph ph-target" aria-hidden="true"></i></div>
+            <h3>Intentional Design</h3>
+            <p>Every decision has a reason. Good design isn&#39;t decoration &mdash; it solves problems and guides people toward a goal.</p>
+          </div>
+          <div class="value-card fade-up">
+            <div class="icon"><i class="ph ph-wheelchair" aria-hidden="true"></i></div>
+            <h3>Accessibility First</h3>
+            <p>Great websites work for everyone. I include alt text, semantic HTML, and sufficient color contrast in every project.</p>
+          </div>
+          <div class="value-card fade-up">
+            <div class="icon"><i class="ph ph-device-mobile" aria-hidden="true"></i></div>
+            <h3>Mobile Responsive</h3>
+            <p>I test every project on my phone. If it doesn&#39;t work on mobile, it isn&#39;t finished.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Ready to see my work?</h2>
+          <p>Browse my projects to see these skills in action.</p>
+        </div>
+        <a href="projects.html" class="btn-primary">View Projects &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 <strong style="color:rgba(255,255,255,.75);">Yodit Taressa</strong> &middot; ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</p>
+    <p style="margin-top:8px;font-size:.85rem;opacity:.7;">Prefer less motion? <a href="no-animations/about.html" style="color:inherit;text-decoration:underline;">Reduced-motion version &rarr;</a></p>
+  </footer>
+  <script>
+
+    function openMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.add('open');
+      document.getElementById('mobileOverlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+      nav.setAttribute('aria-hidden','false');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','true');
+    }
+    function closeMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('show');
+      document.body.style.overflow = '';
+      nav.setAttribute('aria-hidden','true');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','false');
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
+
+
+    var observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  </script>
+</body>
+</html>

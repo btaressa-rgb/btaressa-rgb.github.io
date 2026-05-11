@@ -1,0 +1,131 @@
+CITATIONS & SOURCES
+===================
+ITE 170 Portfolio Website — Yodit Taressa
+Northern Virginia Community College (NOVA), Annandale Campus
+Spring 2025
+
+────────────────────────────────────────────────────────────────────────────────
+IMAGES (Unsplash — Free to use under the Unsplash License)
+────────────────────────────────────────────────────────────────────────────────
+All photographs used in this project are sourced from Unsplash (https://unsplash.com),
+which provides free high-resolution photos under the Unsplash License. No attribution
+is required, but sources are listed here for academic transparency.
+
+1. Hero slide 1 — Laptop with code on screen
+   URL: https://unsplash.com/photos/macbook-pro-on-table-beside-white-iMac-and-Magic-Mouse-hpjSkU2UYSU
+   Photographer: Christopher Gower
+   Used on: index.html (hero section, slide 1)
+
+2. Hero slide 2 — Creative design workspace
+   URL: https://unsplash.com/photos/person-using-computer-and-holding-pencil-near-papers-on-table-mcSDtbWXUZU
+   Photographer: Unsplash
+   Used on: index.html (hero section, slide 2)
+
+3. Hero slide 3 — Technology and digital creativity
+   URL: https://unsplash.com/photos/person-holding-black-iphone-5-KgLtFCgfC28
+   Photographer: Unsplash
+   Used on: index.html (hero section, slide 3)
+
+4. Web design on multiple devices
+   URL: https://unsplash.com/photos/silver-imac-displaying-collage-photos-1SAnrIxw5OY
+   Photographer: Unsplash
+   Used on: index.html (feature section 1)
+
+5. Code on screen
+   URL: https://unsplash.com/photos/turned-on-monitor-displaying-programming-language-xkBaqlcqeb4
+   Photographer: Unsplash
+   Used on: index.html (feature section 2)
+
+6. Portfolio project screenshot
+   URL: https://unsplash.com/photos/person-using-macbook-pro-on-table-during-daytime-photo-gySMaocSdqs
+   Photographer: Unsplash
+   Used on: index.html, projects.html (project card)
+
+7. Professional workspace (About page)
+   URL: https://unsplash.com/photos/woman-in-gray-blazer-sitting-on-chair-in-front-of-table-with-macbook-pro-mEZ3PoFGs_k
+   Photographer: Unsplash
+   Used on: about.html (bio section)
+
+8. Photography tools
+   URL: https://unsplash.com/photos/black-nikon-dslr-camera-on-brown-wooden-table-zEqkUMiMxMI
+   Photographer: Unsplash
+   Used on: multimedia.html (photography gallery)
+
+9. Technology workspace
+   URL: https://unsplash.com/photos/people-sitting-down-near-table-with-assorted-laptop-computers-5fNmWej4tAA
+   Photographer: Unsplash
+   Used on: multimedia.html (photography gallery)
+
+10. Portrait photography
+    URL: https://unsplash.com/photos/man-wearing-white-top-in-front-of-woman-wearing-blue-long-sleeved-top-rDEOVtE7vOs
+    Photographer: Unsplash
+    Used on: multimedia.html (photography gallery)
+
+11. Video poster image
+    URL: https://unsplash.com/photos/landscape-photography-of-mountains-under-cloudy-sky-Yizrl9N_eDA
+    Photographer: Unsplash
+    Used on: multimedia.html (video section poster)
+
+────────────────────────────────────────────────────────────────────────────────
+VIDEO
+────────────────────────────────────────────────────────────────────────────────
+Sample video (Big Buck Bunny — Creative Commons)
+   URL: https://www.w3schools.com/html/mov_bbb.mp4
+   Source: Blender Foundation / W3Schools HTML Tutorial
+   License: Creative Commons Attribution 3.0
+   Used on: multimedia.html (video section, for demonstration purposes)
+
+────────────────────────────────────────────────────────────────────────────────
+ICONS & FONTS
+────────────────────────────────────────────────────────────────────────────────
+Phosphor Icons
+   URL: https://phosphoricons.com
+   License: MIT License — Free to use
+   Used on: All pages (navigation icons, skill icons, contact icons)
+   CDN: https://unpkg.com/@phosphor-icons/web
+
+────────────────────────────────────────────────────────────────────────────────
+EXTERNAL SERVICES
+────────────────────────────────────────────────────────────────────────────────
+Formspree (Contact Form Backend)
+   URL: https://formspree.io
+   Purpose: Handles contact form submissions without a server
+   Used on: contact.html
+
+Netlify (Hosting & Deployment)
+   URL: https://netlify.com
+   Purpose: Free static site hosting and continuous deployment
+   Used for: Live deployment of this portfolio
+
+────────────────────────────────────────────────────────────────────────────────
+CODE REFERENCES & LEARNING RESOURCES
+────────────────────────────────────────────────────────────────────────────────
+All HTML, CSS, and JavaScript code was written by Yodit Taressa as original work
+for ITE 170 at NOVA Annandale. The following resources were consulted for
+reference and learning:
+
+1. MDN Web Docs — HTML, CSS, JavaScript reference
+   URL: https://developer.mozilla.org
+
+2. W3Schools — HTML/CSS/JavaScript tutorials
+   URL: https://www.w3schools.com
+
+3. CSS-Tricks — Flexbox and Grid guides
+   URL: https://css-tricks.com
+
+4. Web Accessibility Initiative (WAI) — WCAG Guidelines
+   URL: https://www.w3.org/WAI/WCAG21/quickref/
+
+5. Netlify Docs — Deployment and forms documentation
+   URL: https://docs.netlify.com
+
+6. Formspree Docs — Contact form integration
+   URL: https://help.formspree.io
+
+────────────────────────────────────────────────────────────────────────────────
+COURSE INFORMATION
+────────────────────────────────────────────────────────────────────────────────
+Course: ITE 170 — Multimedia and Web Design
+Institution: Northern Virginia Community College (NOVA), Annandale Campus
+Semester: Spring 2025
+Student: Yodit Taressa

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yodit Taressa &mdash; Information Systems Technology student at NOVA Annandale. Web designer, multimedia creator, and digital problem-solver." />
+  <title>Yodit Taressa &middot; Portfolio</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+  <header>
+    <a class="brand" href="index.html" aria-label="Yodit Taressa Home">Yodit<span>Taressa</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html" class="active" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav" onclick="openMobileNav()">
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation" onclick="closeMobileNav()">&times;</button>
+    <span class="mobile-nav-label">Navigation</span>
+    <a href="index.html" class="active" aria-current="page" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="projects.html" onclick="closeMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="closeMobileNav()">Multimedia</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <div class="mobile-nav-cta"><a href="contact.html" onclick="closeMobileNav()">Let&#39;s Connect &rarr;</a></div>
+  </nav>
+  <main id="main-content" style="padding-top:64px;">
+    <!-- HERO SLIDESHOW -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-slide active">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80" class="slide-media" alt="Laptop with code on screen representing web development" loading="eager" />
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80" class="slide-media" alt="Creative design workspace with colorful tools" loading="lazy" />
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80" class="slide-media" alt="Technology and digital creativity" loading="lazy" />
+      </div>
+      <div class="hero-content">
+        <span class="hero-eyebrow">ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</span>
+        <div class="slide-text-wrapper">
+          <div class="slide-text active">
+            <h2>Hi, I&#39;m Yodit Taressa.</h2>
+            <p>Information Systems Technology student, web designer, and digital creator. I build clean, responsive websites that work everywhere.</p>
+          </div>
+          <div class="slide-text">
+            <h2>Design with Purpose.</h2>
+            <p>From concept to deployment &mdash; every project is crafted with intention, accessibility, and attention to detail.</p>
+          </div>
+          <div class="slide-text">
+            <h2>Built to Perform.</h2>
+            <p>Responsive layouts tested on every screen. Fast, accessible, and ready for the real world.</p>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="projects.html" class="btn-primary">View My Projects &rarr;</a>
+          <a href="about.html" class="btn-secondary">About Me</a>
+        </div>
+      </div>
+      <div class="slide-dots" id="slideDots" role="tablist" aria-label="Hero slides">
+        <button class="active" onclick="goToSlide(0)" aria-label="Slide 1" role="tab" aria-selected="true"></button>
+        <button onclick="goToSlide(1)" aria-label="Slide 2" role="tab" aria-selected="false"></button>
+        <button onclick="goToSlide(2)" aria-label="Slide 3" role="tab" aria-selected="false"></button>
+      </div>
+    </section>
+    <!-- FEATURE 1 -->
+    <section class="section white" id="about">
+      <div class="feature-inner fade-up">
+        <div class="feature-visual">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80" alt="Web design project showing a responsive layout on multiple devices" loading="lazy" style="border-radius:12px;width:100%;object-fit:cover;" />
+        </div>
+        <div class="feature-text">
+          <span class="section-label">What I Build</span>
+          <h2 class="section-heading">Design. Code. Deploy.</h2>
+          <p class="section-sub">From hand-coded HTML and CSS to fully deployed websites, I create responsive, accessible experiences. I&#39;m passionate about combining technology with creativity to solve real problems and build things that matter.</p>
+          <a href="projects.html" class="btn-primary" style="align-self:flex-start;margin-top:8px;">See My Work &rarr;</a>
+        </div>
+      </div>
+    </section>
+    <!-- FEATURE 2 -->
+    <section class="section gray">
+      <div class="feature-inner reverse fade-up">
+        <div class="feature-visual">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Code on a screen showing clean, organized HTML and CSS" loading="lazy" style="border-radius:12px;width:100%;object-fit:cover;" />
+        </div>
+        <div class="feature-text">
+          <span class="section-label">Accessible by Design</span>
+          <h2 class="section-heading">Looks great everywhere.</h2>
+          <p class="section-sub">Every site I build is tested on mobile, tablet, and desktop. Responsive layouts, semantic HTML, proper alt text, and WCAG-compliant color contrast &mdash; accessibility is not an afterthought, it&#39;s the foundation.</p>
+          <a href="projects.html" class="btn-primary" style="align-self:flex-start;margin-top:8px;">Explore Projects &rarr;</a>
+        </div>
+      </div>
+    </section>
+    <!-- PROJECT CARDS -->
+    <section class="section white" id="projects">
+      <div class="projects-header fade-up">
+        <div>
+          <span class="section-label">Featured Work</span>
+          <h2 class="section-heading" style="margin-bottom:0;">My Projects</h2>
+        </div>
+        <a href="projects.html" class="view-all">View all &rarr;</a>
+      </div>
+      <div class="project-grid">
+        <a href="projects.html" class="project-card fade-up" aria-label="View Portfolio Website project">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80" alt="Portfolio website project screenshot" loading="lazy" />
+            <span class="card-tag">HTML / CSS</span>
+          </div>
+          <div class="card-body">
+            <h3>ITE 170 Portfolio Website</h3>
+            <p>A fully responsive, accessible 5-page portfolio built from scratch with HTML, CSS, and JavaScript. Deployed live on Netlify.</p>
+          </div>
+        </a>
+        <a href="multimedia.html" class="project-card fade-up" aria-label="View Multimedia project">
+          <div class="card-thumb thumb-gradient-purple">
+            <span class="thumb-label">Multimedia Design</span>
+            <span class="card-tag">Multimedia</span>
+          </div>
+          <div class="card-body">
+            <h3>Digital Media &amp; Animation</h3>
+            <p>Creative multimedia projects including video editing, CSS animations, and digital photography &mdash; exploring visual storytelling through technology.</p>
+          </div>
+        </a>
+        <a href="projects.html" class="project-card fade-up" aria-label="View Responsive Layout project">
+          <div class="card-thumb thumb-gradient-mint">
+            <span class="thumb-label">Responsive Layout</span>
+            <span class="card-tag">Responsive Design</span>
+          </div>
+          <div class="card-body">
+            <h3>Responsive Web Design</h3>
+            <p>Mobile-first layouts using CSS Grid and Flexbox. Every breakpoint tested to ensure a seamless experience on any screen size.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- SKILLS -->
+    <section class="section gray" aria-label="Skills">
+      <div class="skills-inner fade-up">
+        <span class="section-label">My Toolkit</span>
+        <h2 class="section-heading">Skills &amp; Technologies</h2>
+        <div class="skills">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">Web Accessibility (WCAG)</span>
+          <span class="skill-tag">Netlify Deployment</span>
+          <span class="skill-tag">Adobe Creative Suite</span>
+          <span class="skill-tag">Video Editing</span>
+          <span class="skill-tag">Digital Photography</span>
+          <span class="skill-tag">CSS Animation</span>
+          <span class="skill-tag">Microsoft Office</span>
+          <span class="skill-tag">Customer Service</span>
+          <span class="skill-tag">Project Organization</span>
+        </div>
+      </div>
+    </section>
+    <!-- CTA -->
+    <section class="cta-band" id="contact">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Let&#39;s connect.</h2>
+          <p>Interested in my work, want to collaborate, or just want to say hello? I&#39;d love to hear from you.</p>
+        </div>
+        <a href="contact.html" class="btn-primary">Get in Touch &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 <strong style="color:rgba(255,255,255,.75);">Yodit Taressa</strong> &middot; ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</p>
+    <p style="margin-top:8px;font-size:.85rem;opacity:.7;">Prefer less motion? <a href="no-animations/index.html" style="color:inherit;text-decoration:underline;">Reduced-motion version &rarr;</a></p>
+  </footer>
+  <script>
+    // Hero slideshow
+    var currentSlide = 0;
+    var slideTimer;
+    var slides = document.querySelectorAll('.hero-slide');
+    var texts  = document.querySelectorAll('.slide-text');
+    var dots   = document.querySelectorAll('#slideDots button');
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      texts[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      dots[currentSlide].setAttribute('aria-selected','false');
+      currentSlide = n;
+      slides[currentSlide].classList.add('active');
+      texts[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+      dots[currentSlide].setAttribute('aria-selected','true');
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextSlide, 4000);
+    }
+    function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
+    slideTimer = setInterval(nextSlide, 4000);
+
+    function openMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.add('open');
+      document.getElementById('mobileOverlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+      nav.setAttribute('aria-hidden','false');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','true');
+    }
+    function closeMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('show');
+      document.body.style.overflow = '';
+      nav.setAttribute('aria-hidden','true');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','false');
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
+
+
+    var observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  </script>
+</body>
+</html>

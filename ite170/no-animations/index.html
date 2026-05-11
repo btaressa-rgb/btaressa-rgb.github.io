@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<!--
+  DOCTYPE tells the browser this is a modern HTML5 document.
+  Without this line, some browsers go into "quirks mode" and
+  render the page differently than expected.
+-->
+
+<!--
+  ================================================================
+  FROM DR. G — IMPORTANT REQUIREMENT
+  ================================================================
+  Moving forward you need to comment ALL of your changes.
+
+  A comment explains WHY you wrote something, not just what it is.
+  Good comments help you — and anyone reading your code — understand
+  decisions you made weeks or months later.
+
+  How to write a comment:
+    In HTML  →  <!-- your note here - ->  (remove the space before --)
+    In CSS   →  /* your note here */
+    In JS    →  // your note here   (single line)
+                /* your note here */ (multi-line)
+
+  RULE: Every time you add, change, or remove code on a project,
+  add a comment explaining what you did and why.
+  ================================================================
+-->
+
+<html lang="en">
+<!--
+  lang="en" tells the browser and screen readers that this page
+  is written in English. This is required for accessibility —
+  screen readers use it to choose the correct pronunciation engine.
+-->
+
+<head>
+  <!--
+    Everything inside <head> is invisible to the user.
+    It contains metadata (information about the page), the page
+    title shown in the browser tab, and all of our CSS styles.
+  -->
+
+  <meta charset="UTF-8" />
+  <!--
+    charset="UTF-8" sets the character encoding.
+    UTF-8 supports every character — English letters, accents,
+    symbols, and emoji. Without this, special characters may
+    show up as garbled text (? or boxes).
+  -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    The viewport meta tag controls how the page scales on mobile.
+
+    width=device-width  — sets the page width to match the
+                          device screen width exactly, instead of
+                          rendering at 980px and zooming out.
+
+    initial-scale=1.0   — starts at normal zoom (not zoomed in
+                          or out). Without this, mobile browsers
+                          would shrink the whole page to fit.
+
+    This tag is REQUIRED for responsive design to work.
+    If you remove it, all your media queries will be ignored
+    on mobile devices.
+  -->
+
+  <title>My Portfolio – ITE 170 · Multimedia Portfolio</title>
+  <!--
+    The text inside <title> appears in:
+      • The browser tab
+      • Browser bookmarks
+      • Search engine results (Google, Bing)
+    Make it descriptive — include your name and course.
+    Example: "Jordan Rivera – ITD 110 Portfolio · NOVA"
+  -->
+
+  <!-- ============================================================
+    ★ HOW TO FIND CSS FOR THIS PAGE  (read me!)
+    ──────────────────────────────────────────────────────────
+    All styles for this page live in:  css/index.css
+
+    TO FIND THE STYLE FOR AN ELEMENT ON THIS PAGE:
+
+      1. Look at the element in the HTML and find its class.
+         Example:  <section class="page-hero">
+         The class is:  page-hero
+
+      2. Open css/index.css
+
+      3. Press Cmd+F (Mac) or Ctrl+F (Windows) to search.
+         IMPORTANT — put a DOT before the class name:
+           Search:  .page-hero   ← correct (usually 1 rule)
+           Search:  page-hero    ← too many matches
+           Search:  hero         ← way too many matches
+
+    PAGE SECTIONS (in order they appear in css/index.css):
+
+       1. CSS VARIABLES    →  :root  (colors, shadows)
+       2. RESET & BASE     →  *, html, body
+       3. HEADER / NAV     →  header, .brand, .desktop-nav
+       4. MOBILE NAV       →  .mobile-nav, .mobile-toggle
+       5. HERO SLIDESHOW   →  .hero, .hero-slide
+       6. SECTION HELPERS  →  .section-label (and shared helpers)
+       7. FEATURE SPLITS   →  .feature-split, .feature-text
+       8. PROJECT CARDS    →  .project-card, .card-thumb
+       9. SKILLS           →  .skills, .skill-tag
+      10. CTA BAND         →  .cta-band, .btn-primary
+      11. FOOTER           →  footer
+      12. SCROLL FADE-UP   →  .fade-up, @keyframes
+      13. RESPONSIVE       →  @media queries
+
+    TIP: Jump to a section by searching for the number with a
+    period (e.g. "4.") or the section title (e.g. "HERO").
+  ============================================================ -->
+  <link rel="stylesheet" href="css/index.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <!--
+    Everything the user sees lives inside <body>.
+    The page is structured in this order:
+      1. Overlay div (hidden until mobile nav opens)
+      2. <header> — fixed top bar
+      3. <nav> — mobile nav panel
+      4. <main> — all visible page sections
+      5. <footer>
+      6. <script> — JavaScript at the very bottom
+  -->
+
+
+  <!-- ============================================================
+    PAGE OVERLAY
+    ============================================================
+    A full-screen dark layer that appears behind the mobile nav
+    panel when it opens. It dims the page so the user's eye goes
+    to the nav. Clicking the overlay also closes the nav.
+
+    id="mobileOverlay" — JavaScript uses this ID to find and
+    show/hide the overlay.
+
+    onclick="closeMobileNav()" — clicking anywhere on the overlay
+    calls the closeMobileNav() JavaScript function.
+  ============================================================ -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+
+  <!-- ============================================================
+    HEADER
+    ============================================================
+    The fixed top navigation bar. Contains three children
+    arranged with flexbox (justify-content: space-between):
+      LEFT:   Brand/logo link
+      CENTER: Desktop nav links (hidden on mobile)
+      RIGHT:  Wrapper div containing CTA button + hamburger
+  ============================================================ -->
+  <header>
+
+    <!-- Brand name — replace "Your" and "Name" with your actual name.
+         The <span> wraps the second word so CSS can color it with --accent.
+         href="index.html" links back to the homepage from any page. -->
+    <a class="brand" href="index.html">
+      Yodit<span>Taressa</span>
+    </a>
+
+    <!-- Desktop navigation links.
+         class="active" marks the current page's link.
+         The href values are anchor links (#projects) that scroll
+         the page to the matching id="projects" element.
+         Hidden below 900px via CSS media query. -->
+    <nav class="desktop-nav">
+      <a href="index.html" class="active">Home</a>
+      <!-- Changed from in-page #anchors to real page links so the
+           nav now navigates to the other site pages. -->
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Right-side wrapper holds CTA button AND hamburger.
+         Only one is visible at a time:
+           Desktop (900px+): CTA visible, hamburger hidden
+           Mobile (<900px):  CTA hidden, hamburger visible
+    -->
+    <div style="display:flex; align-items:center; gap:12px;">
+
+      <!-- "Hire Me" button removed from nav -->
+
+      <!-- Hamburger button — visible below 900px.
+           aria-label="Open navigation" describes the button for
+           screen readers (which cannot see what the icon looks like).
+           onclick="openMobileNav()" calls the JavaScript function
+           that adds .open to the mobile nav panel.
+           The <span class="bar"> is the middle bar of the hamburger;
+           ::before and ::after pseudo-elements draw the top and bottom bars. -->
+      <button
+        class="mobile-toggle"
+        aria-label="Open navigation"
+        onclick="openMobileNav()">
+        <span class="bar"></span>
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ============================================================
+    MOBILE NAV PANEL
+    ============================================================
+    A slide-in navigation panel for mobile screens.
+    Positioned fixed, starts off-screen to the RIGHT (right: -100%).
+    JavaScript adds class="open" to slide it to right: 0.
+
+    id="mobileNav" — JavaScript targets this ID to open/close.
+    aria-label="Mobile navigation" — screen reader description.
+  ============================================================ -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+
+    <!-- Close button at top of panel.
+         aria-label describes it for screen readers.
+         &times; is the HTML entity for the × character.
+         onclick calls closeMobileNav() to slide the panel back off-screen. -->
+    <button
+      class="mobile-nav-close"
+      aria-label="Close navigation"
+      onclick="closeMobileNav()">
+      &times;
+    </button>
+
+    <!-- Small decorative label at the top of the panel -->
+    <span class="mobile-nav-label">Navigation</span>
+
+    <!-- Navigation links.
+         Each link has onclick="closeMobileNav()" so the panel
+         closes automatically after the user taps a destination.
+         class="active" marks the current page. -->
+    <a href="index.html" class="active" onclick="closeMobileNav()">Home</a>
+    <!-- Mobile nav now links out to the other pages instead of
+         in-page bookmarks, matching the desktop nav. -->
+    <a href="about.html"      onclick="closeMobileNav()">About</a>
+    <a href="projects.html"   onclick="closeMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="closeMobileNav()">Multimedia</a>
+    <a href="contact.html"    onclick="closeMobileNav()">Contact</a>
+
+    <!-- CTA at the bottom of the mobile nav.
+         margin-top: auto in CSS pushes this to the very bottom
+         of the panel regardless of how many links are above it. -->
+    <div class="mobile-nav-cta">
+      <!-- CTA points to the contact page instead of an #anchor. -->
+      <a href="contact.html" onclick="closeMobileNav()">Let's Connect →</a>
+    </div>
+
+  </nav>
+
+
+  <!-- ============================================================
+    MAIN CONTENT
+    ============================================================
+    All visible page sections live inside <main>.
+    padding-top: 64px matches the header height so content
+    starts below the fixed header instead of being hidden behind it.
+  ============================================================ -->
+  <main style="padding-top: 64px;">
+
+
+    <!-- ============================================================
+      HERO SECTION
+      ============================================================
+      Three-slide background slideshow with text overlay.
+      Slides stack using position: absolute inside .hero.
+      JavaScript cycles .active through them every 4 seconds.
+
+      Layer order (bottom to top):
+        z-index 0-1 : .hero-slide divs
+        z-index 2   : .hero::before dark overlay
+        z-index 3   : .hero-content (text + buttons)
+    ============================================================ -->
+    <section class="hero">
+
+      <!-- ── SLIDE INSTRUCTIONS ──────────────────────────────────
+        HOW TO ADD YOUR OWN IMAGE OR VIDEO:
+
+        OPTION A — Image (replace the commented line):
+          <div class="hero-slide active">
+            <img src="images/slide1.jpg" class="slide-media" alt="describe your photo" />
+          </div>
+
+        OPTION B — Video (autoplay, muted, loops silently):
+          <div class="hero-slide active">
+            <video src="media/reel.mp4" class="slide-media"
+                   autoplay muted loop playsinline></video>
+          </div>
+
+        OPTION C — Keep the dark gradient (leave the div empty).
+
+        class="slide-media" makes the image or video fill the slide
+        with object-fit: cover — no stretching, no distortion.
+      ─────────────────────────────────────────────────────────── -->
+
+      <!-- Slide 1 — first visible slide (has class="active" by default) -->
+      <div class="hero-slide active">
+         IMAGE: <img src="https://placehold.co/1920x1080?text=Slide+1" class="slide-media" alt="slide 1 description" /> 
+        <!-- VIDEO: <video src="media/reel.mp4" class="slide-media" autoplay muted loop playsinline></video> -->
+      </div>
+
+      <!-- Slide 2 — becomes active after 4 seconds -->
+      <div class="hero-slide">
+        <!-- IMAGE: <img src="images/slide2.jpg" class="slide-media" alt="slide 2 description" /> -->
+         VIDEO: <video src="https://www.w3schools.com/html/mov_bbb.mp4" class="slide-media" autoplay muted loop playsinline poster="https://placehold.co/1920x1080?text=Slide+2+Video"></video> 
+      </div>
+
+      <!-- Slide 3 — becomes active after 8 seconds -->
+      <div class="hero-slide">
+         <img src="https://placehold.co/1920x1080?text=Slide+3" class="slide-media" alt="slide 3 description" /> 
+        <!-- VIDEO: <video src="media/clip3.mp4" class="slide-media" autoplay muted loop playsinline></video> -->
+      </div>
+
+      <!-- Hero text content (above slides and overlay via z-index: 3).
+           Each .slide-text matches one .hero-slide.
+           JavaScript swaps the active class on both in sync. -->
+      <div class="hero-content">
+
+        <!-- Eyebrow pill label — shared across all slides -->
+        <span class="hero-eyebrow">ITE 170 · Multimedia · NOVA Annandale</span>
+
+        <!-- Wrapper keeps slide texts contained so they don't overlap buttons -->
+        <div class="slide-text-wrapper">
+
+          <!-- Slide 1 text — active by default to match the first slide -->
+          <div class="slide-text active">
+            <h2>Yodit Taressa Here</h2>
+            <p>Web designer and digital creator.
+               I build clean, responsive websites that work everywhere.</p>
+          </div>
+
+          <!-- Slide 2 text — describe your second image or video -->
+          <div class="slide-text">
+            <h2>Creative Solutions</h2>
+            <p>From concept to deployment, every project is crafted
+               with purpose, accessibility, and attention to detail.</p>
+          </div>
+
+          <!-- Slide 3 text — describe your third image or video -->
+          <div class="slide-text">
+            <h2>Built to Perform</h2>
+            <p>Responsive layouts tested on every screen size.
+               Fast, lightweight, and ready for the real world.</p>
+          </div>
+
+        </div>
+
+        <!-- CTA buttons sit below the slide text -->
+        <div class="hero-buttons">
+          <!-- Hero buttons now route to the Projects and About pages. -->
+          <a href="projects.html" class="btn-primary">View My Projects →</a>
+          <a href="about.html"    class="btn-secondary">About Me</a>
+        </div>
+
+      </div>
+
+      <!-- Slide indicator dots at the bottom of the hero.
+           id="slideDots" — JavaScript uses this to find the dot buttons.
+           Each button has onclick="goToSlide(n)" to jump to a specific slide.
+           The first button has class="active" to match the first slide. -->
+      <div class="slide-dots" id="slideDots">
+        <button class="active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+        <button onclick="goToSlide(1)" aria-label="Slide 2"></button>
+        <button onclick="goToSlide(2)" aria-label="Slide 3"></button>
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================
+      FEATURE SECTION 1 — IMAGE LEFT, TEXT RIGHT
+      ============================================================
+      id="about" — the "About Me" hero button scrolls here.
+      Z-pattern: this section has image on the left, text on the right.
+    ============================================================ -->
+    <section class="section white" id="about">
+      <div class="feature-inner fade-up">
+
+        <!-- Left: image placeholder — replace with your screenshot -->
+        <div class="feature-visual">
+          <div class="placeholder">
+            Replace with your<br/>project screenshot<br/>
+            <small style="opacity:.5;margin-top:8px;display:block;">images/screenshot.jpg</small>
+          </div>
+        </div>
+
+        <!-- Right: text content -->
+        <div class="feature-text">
+          <span class="section-label">What I Build</span>
+          <h2 class="section-heading">Design. Code. Deploy.</h2>
+          <p class="section-sub">
+            From hand-coded HTML and CSS to fully deployed websites,
+            I create responsive, accessible experiences. Every project
+            starts with a problem to solve and ends with something real
+            on the internet.
+          </p>
+          <!-- Sends visitors to the Projects page (was an #anchor). -->
+          <a href="projects.html" class="btn-primary" style="align-self: flex-start; margin-top: 8px;">
+            See My Work →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      FEATURE SECTION 2 — TEXT LEFT, IMAGE RIGHT (Z-pattern)
+      ============================================================
+      class="reverse" flips the column order so the eye follows
+      a Z-pattern: section 1 = image left, section 2 = image right.
+    ============================================================ -->
+    <section class="section gray">
+      <div class="feature-inner reverse fade-up">
+
+        <!-- Visual comes first in HTML; .reverse (direction: rtl) moves it to the RIGHT -->
+        <div class="feature-visual">
+          <div class="placeholder">
+            Replace with your<br/>second project<br/>
+            <small style="opacity:.5;margin-top:8px;display:block;">images/project2.jpg</small>
+          </div>
+        </div>
+
+        <!-- Text moves to the LEFT because of .reverse -->
+        <div class="feature-text">
+          <span class="section-label">Responsive Design</span>
+          <h2 class="section-heading">Looks great everywhere.</h2>
+          <p class="section-sub">
+            Every site I build is tested on mobile, tablet, and desktop.
+            Responsive layouts, accessible markup, and clean code —
+            no project is finished until it works on every screen.
+          </p>
+          <!-- Sends visitors to the Projects page (was an #anchor). -->
+          <a href="projects.html" class="btn-primary" style="align-self: flex-start; margin-top: 8px;">
+            Explore Projects →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      PROJECT CARDS SECTION
+      ============================================================
+      id="projects" — nav links scroll here.
+      Three project cards in a responsive auto-fit grid.
+      Each card is an <a> tag so the entire card is clickable.
+
+      To customize each card:
+        1. Replace the Unsplash <img> src with your own screenshot
+        2. Update the card-tag text (category)
+        3. Update the <h3> with your project title
+        4. Update the <p> with your project description
+        5. Change href="#" to your live Netlify URL
+    ============================================================ -->
+    <section class="section white" id="projects">
+
+      <!-- Section header row: heading left, "View all" link right -->
+      <div class="projects-header fade-up">
+        <div>
+          <span class="section-label">Featured Work</span>
+          <h2 class="section-heading" style="margin-bottom:0;">My Projects</h2>
+        </div>
+        <!-- "View all" now links to the Projects page. -->
+        <a href="projects.html" class="view-all">View all →</a>
+      </div>
+
+      <!-- Card grid — auto-fills columns, minimum 300px each -->
+      <div class="project-grid">
+
+        <!-- ── PROJECT CARD 1 ────────────────────────────────────
+          The entire <a> is the card. href="#" should become your
+          live project URL when you deploy to Netlify.
+        ──────────────────────────────────────────────────────── -->
+        <a href="projects.html" class="project-card fade-up">
+
+          <!-- Thumbnail: currently a placeholder Unsplash photo.
+               Replace src with your own screenshot.
+               Keep loading="lazy" — it defers loading until the image
+               scrolls into view, improving page load performance. -->
+          <div class="card-thumb">
+            <img
+              src="https://placehold.co/600x400?text=Project+One"
+              alt="Web design project screenshot"
+              loading="lazy"
+            />
+            <!-- Category pill overlaid on the thumbnail.
+                 Replace the text with your project's category. -->
+            <span class="card-tag">HTML / CSS</span>
+          </div>
+
+          <!-- Card text body below the thumbnail -->
+          <div class="card-body">
+            <h3>Project One Title</h3>
+            <!-- Replace with your actual project name -->
+
+            <p>Replace with a short description of what this project does and what you learned building it.</p>
+          </div>
+
+        </a>
+
+        <!-- ── PROJECT CARD 2 — GRADIENT THUMBNAIL ──────────────
+          Demonstrates the gradient option. Add one of these
+          modifier classes to .card-thumb to swap the look:
+            thumb-gradient-purple   thumb-gradient-sunset
+            thumb-gradient-mint     thumb-gradient-ink
+            thumb-solid-purple      thumb-solid-blue
+            thumb-solid-ink
+          The optional <span class="thumb-label"> shows a big
+          centered title in place of an image.
+        ──────────────────────────────────────────────────────── -->
+        <a href="projects.html" class="project-card fade-up">
+          <div class="card-thumb thumb-gradient-purple">
+            <span class="thumb-label">Responsive Layout</span>
+            <span class="card-tag">Responsive Layout</span>
+          </div>
+          <div class="card-body">
+            <h3>Project Two Title</h3>
+            <p>Describe your second project. What was the goal? What techniques did you use?</p>
+          </div>
+        </a>
+
+        <!-- ── PROJECT CARD 3 — VIDEO THUMBNAIL ─────────────────
+          Demonstrates the video option. The <video> replaces the
+          <img>. Attributes used:
+            autoplay  — start playing as soon as it loads
+            muted     — REQUIRED for autoplay in modern browsers
+            loop      — restart when it reaches the end
+            playsinline — keep it inline on iOS (no fullscreen)
+            poster    — still image shown before the video loads
+          Replace the src with your own .mp4 when you have one.
+        ──────────────────────────────────────────────────────── -->
+        <a href="projects.html" class="project-card fade-up">
+          <div class="card-thumb">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              poster="https://placehold.co/600x400?text=Project+Three+Video"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <span class="card-tag">Motion / Video</span>
+          </div>
+          <div class="card-body">
+            <h3>Project Three Title</h3>
+            <p>Third project description. What makes this one stand out in your portfolio?</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+
+
+
+    <!-- ============================================================
+      CTA (CALL TO ACTION) BAND
+      ============================================================
+      id="contact" — nav links and the "Hire Me" header button scroll here.
+      Contains a heading + description on the left, a contact
+      button on the right.
+
+      Replace "yourname@email.com" with your actual email address.
+      mailto: is an HTML protocol that opens the user's email app
+      with a new message pre-addressed to the email you specify.
+    ============================================================ -->
+    <section class="cta-band" id="contact">
+      <div class="cta-inner fade-up">
+
+        <div class="cta-text">
+          <h2>Let's connect.</h2>
+          <p>
+            Interested in my work, want to give feedback, or just want to say hello?
+            I'd love to hear from you.
+          </p>
+        </div>
+
+        <!-- Replace yourname@email.com with your real email -->
+        <a href="mailto:yourname@email.com" class="btn-primary">
+          Get in Touch →
+        </a>
+
+      </div>
+    </section>
+
+
+  </main><!-- end of main content -->
+
+
+  <!-- ============================================================
+    FOOTER
+    ============================================================
+    Simple centered dark footer.
+    Replace "Yodit Taressa" with your actual name.
+    The <strong> tag makes the name slightly brighter white.
+    &copy; = © copyright symbol.
+    &middot; = · middle dot separator character.
+  ============================================================ -->
+  <footer>
+    <p>© 2025 <strong style="color:rgba(255,255,255,.55);">Yodit Taressa</strong> · ITE 170 · Multimedia · NOVA Annandale</p>
+    <!-- Cross-link back to the animated version of this same page.
+         Lives in the parent directory, so the path starts with ../ -->
+    <p style="margin-top:8px;font-size:.85rem;opacity:.7;">
+      Viewing reduced-motion version · <a href="../index.html" style="color:inherit;text-decoration:underline;">Standard version →</a>
+    </p>
+  </footer>
+
+
+  <!-- ============================================================
+    JAVASCRIPT
+    ============================================================
+    All JavaScript lives in one <script> block at the bottom of
+    the page — AFTER all the HTML. This is intentional.
+
+    WHY AT THE BOTTOM: JavaScript that runs at the top of the page
+    (inside <head>) executes before the HTML exists, so
+    document.getElementById() and similar methods find nothing.
+    Placing <script> at the bottom ensures all HTML elements
+    have been created before JavaScript tries to find them.
+
+    Three independent features:
+      1. Hero Slideshow    — cycles slides on a timer
+      2. Mobile Nav        — open/close the right-side panel
+      3. Scroll Animations — fades elements in as you scroll
+  ============================================================ -->
+  <script>
+
+    // ============================================================
+    // 1. HERO SLIDESHOW
+    // ============================================================
+    // How it works:
+    //   - All .hero-slide divs start with opacity: 0 (CSS)
+    //   - The first one starts with class="active" (opacity: 1)
+    //   - A timer calls nextSlide() every 4 seconds
+    //   - nextSlide() removes .active from the current slide
+    //     and adds it to the next one
+    //   - CSS transition: opacity 1.2s eases the change smoothly
+    //   - goToSlide() is also called when user clicks a dot
+    // ============================================================
+
+    // Grab all .hero-slide elements (the background images/videos)
+    const slides = document.querySelectorAll('.hero-slide');
+
+    // Grab all .slide-text elements (the per-slide captions)
+    const slideTexts = document.querySelectorAll('.slide-text-wrapper .slide-text');
+
+    // Grab all dot buttons inside #slideDots
+    const dotButtons = document.querySelectorAll('#slideDots button');
+
+    // Track which slide is currently showing (index starts at 0)
+    let currentSlide = 0;
+
+    // Variable to hold the timer so we can reset it when needed
+    let slideTimer;
+
+    function goToSlide(n) {
+      // Remove .active from the current slide, text, and dot
+      slides[currentSlide].classList.remove('active');
+      slideTexts[currentSlide].classList.remove('active');
+      dotButtons[currentSlide].classList.remove('active');
+
+      // Update currentSlide to the new index
+      currentSlide = n;
+
+      // Add .active to the new slide, its text, and its dot
+      slides[currentSlide].classList.add('active');
+      slideTexts[currentSlide].classList.add('active');
+      dotButtons[currentSlide].classList.add('active');
+
+      // REDUCED-MOTION VERSION: no auto-advance timer to reset.
+      // Manual dot clicks still work; the slideshow just won't cycle.
+    }
+
+    function nextSlide() {
+      // Calculate the index of the next slide.
+      // % (modulo) wraps around: when currentSlide is 2 (last),
+      // (2 + 1) % 3 = 0, so it cycles back to the first slide.
+      goToSlide((currentSlide + 1) % slides.length);
+    }
+
+    // REDUCED-MOTION VERSION: the auto-advance interval is intentionally
+    // NOT started here. The slideshow markup, dot buttons, and goToSlide()
+    // function are kept intact so the user can still manually click a dot
+    // to switch slides — but nothing cycles on its own.
+    // (Standard version starts: setInterval(nextSlide, 4000))
+
+
+    // ============================================================
+    // 2. MOBILE NAVIGATION — RIGHT SIDE
+    // ============================================================
+    // How it works:
+    //   - .mobile-nav starts at right: -100% (off-screen, CSS)
+    //   - openMobileNav() adds class="open" → CSS sets right: 0
+    //   - CSS transition: right .32s ease animates the slide
+    //   - closeMobileNav() removes class="open" → slides back
+    //   - The overlay is shown/hidden in sync with the nav
+    //   - body scroll is locked while nav is open
+    // ============================================================
+
+    function openMobileNav() {
+      // Add .open to the nav panel — triggers CSS to slide it in from the right
+      document.getElementById('mobileNav').classList.add('open');
+
+      // Add .show to the overlay — makes the dark dimming layer visible
+      document.getElementById('mobileOverlay').classList.add('show');
+
+      // Lock the page from scrolling while the nav is open.
+      // Without this, the user could scroll the page behind the nav,
+      // which is disorienting and hard to undo.
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileNav() {
+      // Remove .open from the nav — triggers CSS to slide it back off-screen
+      document.getElementById('mobileNav').classList.remove('open');
+
+      // Remove .show from the overlay — hides the dimming layer
+      document.getElementById('mobileOverlay').classList.remove('show');
+
+      // Restore normal page scrolling
+      document.body.style.overflow = '';
+      // '' (empty string) removes the inline style entirely,
+      // so the element reverts to whatever the stylesheet specifies.
+    }
+
+    // Allow the Escape key to close the mobile nav.
+    // document.addEventListener() listens for events on the entire page.
+    // 'keydown' fires when any key is pressed.
+    document.addEventListener('keydown', function(e) {
+      // e.key is the name of the key that was pressed.
+      // If Escape was pressed, close the nav.
+      if (e.key === 'Escape') closeMobileNav();
+    });
+
+
+    // ============================================================
+    // 3. SCROLL FADE-UP ANIMATIONS
+    // ============================================================
+    // How it works:
+    //   - Elements with class="fade-up" start invisible (CSS)
+    //   - IntersectionObserver watches each .fade-up element
+    //   - When one enters the viewport, observer adds .visible
+    //   - CSS transitions opacity 0→1 and translateY 36px→0
+    //   - observer.unobserve() stops watching after first trigger
+    //     so the element doesn't fade out again when scrolled past
+    // ============================================================
+
+    // IntersectionObserver is a modern browser API that efficiently
+    // detects when elements enter or leave the viewport.
+    // It's much better than the old approach of listening to
+    // the 'scroll' event (which fired hundreds of times per second).
+
+    const observer = new IntersectionObserver(
+      // Callback function — runs each time a watched element's
+      // visibility state changes
+      function(entries) {
+        entries.forEach(function(entry) {
+          // entry.isIntersecting is true when the element
+          // has entered the viewport (is visible to the user)
+          if (entry.isIntersecting) {
+
+            // Add .visible class — triggers the CSS fade-up animation
+            entry.target.classList.add('visible');
+
+            // Stop watching this element once it has animated in.
+            // Without this, the element could animate again if
+            // scrolled out and back in — usually unwanted behavior.
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+
+      // Options object — configures when the callback fires
+      {
+        threshold: 0.1,
+        // Fire when at least 10% of the element is visible.
+        // Using 0 would trigger as soon as 1px enters the viewport,
+        // which feels too early. 0.1 waits until there's enough of
+        // the element visible that the animation makes visual sense.
+
+        rootMargin: '0px 0px -40px 0px'
+        // Shrinks the detection zone by 40px from the bottom.
+        // This means the element needs to be 40px further into the
+        // viewport before animating — prevents triggering too early
+        // on elements that are just barely entering the bottom edge.
+      }
+    );
+
+    // Find every element with class="fade-up" and start watching it.
+    // querySelectorAll returns a NodeList; forEach loops through each element.
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+      observer.observe(el);
+      // observe() registers this element with the IntersectionObserver.
+      // The observer will now call the callback whenever this element's
+      // visibility changes.
+    });
+
+  </script>
+
+</body>
+</html>

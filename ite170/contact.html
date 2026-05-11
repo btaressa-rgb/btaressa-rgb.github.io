@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Yodit Taressa &mdash; Information Systems Technology student at NOVA Annandale. Send a message or connect on social media." />
+  <title>Contact &middot; Yodit Taressa</title>
+  <link rel="stylesheet" href="css/contact.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+  <header>
+    <a class="brand" href="index.html" aria-label="Yodit Taressa Home">Yodit<span>Taressa</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html" class="active" aria-current="page">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav" onclick="openMobileNav()">
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation" onclick="closeMobileNav()">&times;</button>
+    <span class="mobile-nav-label">Navigation</span>
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="projects.html" onclick="closeMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="closeMobileNav()">Multimedia</a>
+    <a href="contact.html" class="active" aria-current="page" onclick="closeMobileNav()">Contact</a>
+    <div class="mobile-nav-cta"><a href="contact.html" onclick="closeMobileNav()">Let&#39;s Connect &rarr;</a></div>
+  </nav>
+  <main id="main-content" style="padding-top:64px;">
+    <!-- PAGE HERO -->
+    <section class="page-hero hero-gradient" aria-label="Contact Yodit Taressa">
+      <div class="page-hero-content fade-up">
+        <span class="section-label">Get in Touch</span>
+        <h1>Let&#39;s Connect</h1>
+        <p>I&#39;d love to hear from you &mdash; whether you have feedback, a question, or just want to say hello.</p>
+      </div>
+    </section>
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+      <div class="contact-inner">
+        <!-- LEFT: Contact info -->
+        <div class="contact-info fade-up">
+          <h2>Say Hello</h2>
+          <p>I&#39;m always open to connecting with fellow students, instructors, and anyone interested in web design and technology. Feel free to reach out!</p>
+          <div class="info-items">
+            <div class="info-item">
+              <span class="info-icon"><i class="ph ph-envelope" aria-hidden="true"></i></span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:ytaressa@student.nvcc.edu">ytaressa@student.nvcc.edu</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon"><i class="ph ph-map-pin" aria-hidden="true"></i></span>
+              <div>
+                <strong>Location</strong>
+                <span>Annandale, Virginia &middot; NOVA Campus</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span>
+              <div>
+                <strong>Program</strong>
+                <span>Information Systems Technology &middot; ITE 170</span>
+              </div>
+            </div>
+          </div>
+          <div class="social-links" style="margin-top:2rem;">
+            <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+              <span class="social-link-icon"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></span>
+              LinkedIn
+            </a>
+            <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="GitHub profile">
+              <span class="social-link-icon"><i class="ph ph-github-logo" aria-hidden="true"></i></span>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- RIGHT: Contact form -->
+        <div class="contact-form-wrap fade-up">
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xpwzgkqb"
+            method="POST"
+            onsubmit="handleSubmit(event)"
+            novalidate
+            aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="firstName" name="firstName"
+                       placeholder="Yodit" required autocomplete="given-name"
+                       aria-required="true" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName"
+                       placeholder="Taressa" autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email"
+                     placeholder="you@example.com" required autocomplete="email"
+                     aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" aria-label="Message subject">
+                <option value="">Select a topic...</option>
+                <option value="feedback">Portfolio Feedback</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="question">General Question</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="5"
+                        placeholder="Tell me what&#39;s on your mind..." required
+                        aria-required="true"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+              Send Message &rarr;
+            </button>
+          </form>
+          <div id="successMsg" class="success-msg" role="alert" aria-live="polite">
+            <i class="ph ph-check-circle" aria-hidden="true"></i>
+            <strong>Message sent!</strong>
+            <p>Thank you for reaching out. I&#39;ll get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Thanks for visiting.</h2>
+          <p>Explore my projects and multimedia work while you&#39;re here.</p>
+        </div>
+        <a href="projects.html" class="btn-primary">View My Projects &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 <strong style="color:rgba(255,255,255,.75);">Yodit Taressa</strong> &middot; ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</p>
+    <p style="margin-top:8px;font-size:.85rem;opacity:.7;">Prefer less motion? <a href="no-animations/contact.html" style="color:inherit;text-decoration:underline;">Reduced-motion version &rarr;</a></p>
+  </footer>
+  <script>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      var form = document.getElementById('contactForm');
+      var firstName = document.getElementById('firstName').value.trim();
+      var email     = document.getElementById('email').value.trim();
+      var message   = document.getElementById('message').value.trim();
+      if (!firstName || !email || !message) {
+        alert('Please fill in all required fields (marked with *).');
+        return;
+      }
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      var showSuccess = function() {
+        form.style.display = 'none';
+        document.getElementById('successMsg').classList.add('show');
+        form.reset();
+      };
+      if (form.action.includes('xpwzgkqb') === false && form.action.includes('YOUR_FORM_ID')) {
+        showSuccess();
+        return;
+      }
+      try {
+        var res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) showSuccess();
+        else alert('Sorry &mdash; something went wrong. Please email me directly at ytaressa@student.nvcc.edu');
+      } catch(err) {
+        alert('Network error. Please check your connection and try again.');
+      }
+    }
+
+    function openMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.add('open');
+      document.getElementById('mobileOverlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+      nav.setAttribute('aria-hidden','false');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','true');
+    }
+    function closeMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('show');
+      document.body.style.overflow = '';
+      nav.setAttribute('aria-hidden','true');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','false');
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
+
+
+    var observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  </script>
+</body>
+</html>

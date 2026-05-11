@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projects by Yodit Taressa &mdash; responsive websites, multimedia designs, and web development work from ITE 170 at NOVA Annandale." />
+  <title>Projects &middot; Yodit Taressa</title>
+  <link rel="stylesheet" href="css/projects.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+  <header>
+    <a class="brand" href="index.html" aria-label="Yodit Taressa Home">Yodit<span>Taressa</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active" aria-current="page">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav" onclick="openMobileNav()">
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation" onclick="closeMobileNav()">&times;</button>
+    <span class="mobile-nav-label">Navigation</span>
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="projects.html" class="active" aria-current="page" onclick="closeMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="closeMobileNav()">Multimedia</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <div class="mobile-nav-cta"><a href="contact.html" onclick="closeMobileNav()">Let&#39;s Connect &rarr;</a></div>
+  </nav>
+  <main id="main-content" style="padding-top:64px;">
+    <!-- PAGE HERO -->
+    <section class="page-hero hero-gradient" aria-label="Projects">
+      <div class="page-hero-content fade-up">
+        <span class="section-label">My Work</span>
+        <h1>Projects</h1>
+        <p>Responsive websites, multimedia designs, and web development projects from ITE 170.</p>
+      </div>
+    </section>
+    <!-- FILTER BAR -->
+    <div class="filter-bar" role="navigation" aria-label="Filter projects">
+      <div class="filter-inner">
+        <button class="filter-btn active" onclick="filterProjects(this,'all')" aria-pressed="true">All</button>
+        <button class="filter-btn" onclick="filterProjects(this,'html-css')" aria-pressed="false">HTML / CSS</button>
+        <button class="filter-btn" onclick="filterProjects(this,'javascript')" aria-pressed="false">JavaScript</button>
+        <button class="filter-btn" onclick="filterProjects(this,'multimedia')" aria-pressed="false">Multimedia</button>
+        <button class="filter-btn" onclick="filterProjects(this,'responsive')" aria-pressed="false">Responsive</button>
+      </div>
+    </div>
+    <!-- PROJECTS GRID -->
+    <section class="projects-section" aria-label="Project cards">
+      <div class="projects-grid">
+        <!-- Project 1: Portfolio Website -->
+        <a class="project-card fade-up" data-category="html-css" href="#" aria-label="View ITE 170 Portfolio Website">
+          <div class="card-thumb thumb-image">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80" alt="Portfolio website showing responsive design on multiple devices" class="thumb-media" loading="lazy" />
+            <span class="card-category">HTML / CSS</span>
+            <span class="card-status status-complete">Completed</span>
+          </div>
+          <div class="card-content">
+            <h3>ITE 170 Portfolio Website</h3>
+            <p>A fully responsive, accessible 5-page portfolio website built from scratch with HTML5, CSS3, and JavaScript. Features a hero slideshow, project cards, contact form, and Netlify deployment.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Netlify</span>
+            </div>
+            <span class="card-link">View Live Site <span>&rarr;</span></span>
+          </div>
+        </a>
+        <!-- Project 2: Responsive Layout -->
+        <a class="project-card fade-up" data-category="responsive" href="#" aria-label="View Responsive Product Page">
+          <div class="card-thumb thumb-gradient" style="--thumb-grad: linear-gradient(135deg,#7c5cff,#4a90e2);">
+            <span class="card-category">Responsive</span>
+            <span class="card-status status-complete">Completed</span>
+          </div>
+          <div class="card-content">
+            <h3>Responsive Product Landing Page</h3>
+            <p>A mobile-first product landing page using CSS Grid and Flexbox. Designed to look great on phones, tablets, and desktops with smooth hover interactions and accessible markup.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS Grid</span>
+              <span class="tech-tag">Flexbox</span>
+              <span class="tech-tag">Mobile-First</span>
+            </div>
+            <span class="card-link">View Live Site <span>&rarr;</span></span>
+          </div>
+        </a>
+        <!-- Project 3: Photography Grid -->
+        <a class="project-card fade-up" data-category="html-css" href="#" aria-label="View Photography Grid project">
+          <div class="card-thumb thumb-image">
+            <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&q=80" alt="Photography grid layout showing masonry-style photo arrangement" class="thumb-media" loading="lazy" />
+            <span class="card-category">HTML / CSS</span>
+            <span class="card-status status-complete">Completed</span>
+          </div>
+          <div class="card-content">
+            <h3>Photography Gallery Grid</h3>
+            <p>A CSS columns masonry-style photography gallery with a lightbox viewer. Built with pure CSS and JavaScript &mdash; no frameworks. Features hover effects and keyboard-accessible navigation.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS Columns</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Lightbox</span>
+            </div>
+            <span class="card-link">View Live Site <span>&rarr;</span></span>
+          </div>
+        </a>
+        <!-- Project 4: CSS Animation -->
+        <a class="project-card fade-up" data-category="multimedia" href="#" aria-label="View CSS Animation project">
+          <div class="card-thumb thumb-gradient" style="--thumb-grad: linear-gradient(135deg,#ff6b9d,#7c5cff);">
+            <span class="card-category">Multimedia</span>
+            <span class="card-status status-complete">Completed</span>
+          </div>
+          <div class="card-content">
+            <h3>CSS Animation Showcase</h3>
+            <p>An interactive page demonstrating CSS keyframe animations, transitions, and transforms. Includes loading spinners, hover effects, scroll-triggered animations, and a color-shifting background.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">CSS Animations</span>
+              <span class="tech-tag">Keyframes</span>
+              <span class="tech-tag">Transforms</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <span class="card-link">View Live Site <span>&rarr;</span></span>
+          </div>
+        </a>
+        <!-- Project 5: Tailwind Page -->
+        <a class="project-card fade-up" data-category="responsive" href="#" aria-label="View Tailwind CSS project">
+          <div class="card-thumb thumb-gradient" style="--thumb-grad: linear-gradient(135deg,#0f2040,#4a90e2);">
+            <span class="card-category">Responsive</span>
+            <span class="card-status status-progress">In Progress</span>
+          </div>
+          <div class="card-content">
+            <h3>Tailwind CSS Business Page</h3>
+            <p>A modern business landing page built with Tailwind CSS utility classes. Demonstrates rapid prototyping, consistent design tokens, and responsive breakpoints using a utility-first approach.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">Responsive</span>
+            </div>
+            <span class="card-link">View Live Site <span>&rarr;</span></span>
+          </div>
+        </a>
+        <!-- Project 6: JavaScript Interactive -->
+        <a class="project-card fade-up" data-category="javascript" href="#" aria-label="View JavaScript Interactive project">
+          <div class="card-thumb thumb-gradient" style="--thumb-grad: linear-gradient(135deg,#1a4020,#4a9040);">
+            <span class="card-category">JavaScript</span>
+            <span class="card-status status-complete">Completed</span>
+          </div>
+          <div class="card-content">
+            <h3>Interactive JavaScript Component</h3>
+            <p>A dynamic, interactive web component built with vanilla JavaScript. Features real-time filtering, DOM manipulation, and event handling &mdash; no libraries or frameworks required.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">DOM API</span>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+            <span class="card-link">View Live Site <span>&rarr;</span></span>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- FEATURED PROJECT -->
+    <section class="featured-project" aria-label="Featured project">
+      <div class="featured-inner fade-up">
+        <div class="featured-visual">
+          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80" alt="ITE 170 Portfolio Website &mdash; featured capstone project" loading="lazy" style="border-radius:12px;width:100%;object-fit:cover;" />
+        </div>
+        <div class="featured-text">
+          <div class="featured-badge">&#11088; Featured Project</div>
+          <h2>ITE 170 Capstone Portfolio</h2>
+          <p>This portfolio website is my capstone project for ITE 170 at NOVA Annandale. It represents everything I&#39;ve learned this semester: responsive design, accessibility, multimedia integration, JavaScript interactivity, and live deployment. Every page was hand-coded, tested across devices, and deployed on Netlify.</p>
+          <ul class="outcomes">
+            <li>Built and deployed a fully responsive 5-page website from scratch</li>
+            <li>Implemented WCAG AA accessibility standards throughout</li>
+            <li>Integrated CSS animations, JavaScript interactivity, and multimedia content</li>
+            <li>Deployed live on Netlify with a working contact form via Formspree</li>
+          </ul>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+            <a href="#" class="btn-primary">View Live Site &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Want to see my multimedia work?</h2>
+          <p>Video, animation, and interactive media projects from the semester.</p>
+        </div>
+        <a href="multimedia.html" class="btn-primary">Explore Multimedia &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 <strong style="color:rgba(255,255,255,.75);">Yodit Taressa</strong> &middot; ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</p>
+    <p style="margin-top:8px;font-size:.85rem;opacity:.7;">Prefer less motion? <a href="no-animations/projects.html" style="color:inherit;text-decoration:underline;">Reduced-motion version &rarr;</a></p>
+  </footer>
+  <script>
+    function filterProjects(btn, category) {
+      document.querySelectorAll('.filter-btn').forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed','false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed','true');
+      document.querySelectorAll('.project-card').forEach(function(card) {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function openMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.add('open');
+      document.getElementById('mobileOverlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+      nav.setAttribute('aria-hidden','false');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','true');
+    }
+    function closeMobileNav() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('show');
+      document.body.style.overflow = '';
+      nav.setAttribute('aria-hidden','true');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded','false');
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
+
+
+    var observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  </script>
+</body>
+</html>

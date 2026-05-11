@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – My Portfolio</title>
+
+  <!-- ============================================================
+    ★ HOW TO FIND CSS FOR THIS PAGE  (read me!)
+    ──────────────────────────────────────────────────────────
+    All styles for this page live in:  css/contact.css
+
+    TO FIND THE STYLE FOR AN ELEMENT ON THIS PAGE:
+
+      1. Look at the element in the HTML and find its class.
+         Example:  <section class="page-hero">
+         The class is:  page-hero
+
+      2. Open css/contact.css
+
+      3. Press Cmd+F (Mac) or Ctrl+F (Windows) to search.
+         IMPORTANT — put a DOT before the class name:
+           Search:  .page-hero   ← correct (usually 1 rule)
+           Search:  page-hero    ← too many matches
+           Search:  hero         ← way too many matches
+
+    PAGE SECTIONS (in order they appear in css/contact.css):
+
+      1. VARIABLES & RESET  →  :root, body
+      2. HEADER             →  header, .brand, .desktop-nav
+      3. PAGE HERO          →  .page-hero, .page-hero h1
+      4. CONTACT SPLIT      →  .contact-split, .contact-info, .contact-form
+      5. CONTACT FORM       →  .contact-form, input, textarea
+      6. SOCIAL LINKS       →  .social-links, .social-link
+      7. SUCCESS MESSAGE    →  .success-message
+      8. CTA & FOOTER       →  .cta-band, footer
+      9. ANIMATIONS         →  @keyframes, @media queries
+
+    TIP: Jump to a section by searching for the number with a
+    period (e.g. "4.") or the section title (e.g. "HERO").
+  ============================================================ -->
+  <link rel="stylesheet" href="css/contact.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <a class="brand" href="index.html">Your<span>Portfolio</span></a>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Open menu" onclick="toggleMobileNav()"><span></span></button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html"      onclick="toggleMobileNav()">Home</a>
+    <a href="about.html"      onclick="toggleMobileNav()">About</a>
+    <a href="projects.html"   onclick="toggleMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="toggleMobileNav()">Multimedia</a>
+    <a href="contact.html" class="active" onclick="toggleMobileNav()">Contact</a>
+  </nav>
+
+  <main style="padding-top:64px;">
+
+    <!-- ── PAGE HERO ──
+      Pick ONE background style by setting the section's class:
+         class="page-hero hero-gradient"  →  animated gradient (no asset)
+         class="page-hero hero-image"     →  uncomment the <img>  below
+         class="page-hero hero-video"     →  uncomment the <video> below
+      Only ONE media element should be active at a time.
+    ── -->
+    <section class="page-hero hero-gradient">
+
+      <!-- (B) IMAGE OPTION — uncomment, set class="page-hero hero-image" above
+      <img
+        class="page-hero-media"
+        src="https://placehold.co/1920x1080?text=Contact+Hero"
+        alt="" aria-hidden="true" />
+      -->
+
+      <!-- (C) VIDEO OPTION — uncomment, set class="page-hero hero-video" above
+      <video
+        class="page-hero-media"
+        autoplay muted loop playsinline
+        poster="https://placehold.co/1920x1080?text=Contact+Hero+Video">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      </video>
+      -->
+
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow">Get in Touch</span>
+        <h1>Contact</h1>
+        <!-- ★ Replace with your own invitation -->
+        <p>Have feedback, a question, or just want to connect? I'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <!-- ── CONTACT SPLIT ── -->
+    <section class="contact-section">
+      <div class="contact-inner">
+
+        <!-- LEFT: Contact info + methods -->
+        <div class="contact-info fade-up">
+          <div>
+            <span class="section-label">Contact</span>
+            <!-- ★ Replace heading and intro -->
+            <h2>Let's connect</h2>
+            <p>
+              Whether you're a fellow student, potential collaborator, or
+              employer reviewing my work — feel free to reach out.
+              I typically respond within 24 hours.
+            </p>
+          </div>
+
+          <!-- Contact method cards -->
+          <!-- ★ Replace with YOUR actual contact info -->
+
+          <div class="contact-method">
+            <div class="method-icon"><i class="ph ph-envelope" aria-hidden="true"></i></div>
+            <div class="method-info">
+              <div class="method-type">Email</div>
+              <div class="method-value">
+                <!-- ★ Replace with your NOVA email or personal email -->
+                <a href="mailto:yourname@email.com">yourname@email.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon"><i class="ph ph-graduation-cap" aria-hidden="true"></i></div>
+            <div class="method-info">
+              <div class="method-type">Institution</div>
+              <div class="method-value">NOVA Annandale · ITE 170</div>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></div>
+            <div class="method-info">
+              <div class="method-type">LinkedIn</div>
+              <div class="method-value">
+                <!-- ★ Replace with your LinkedIn URL (optional) -->
+                <a href="#" target="_blank" rel="noopener">Your LinkedIn Profile →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon"><i class="ph ph-github-logo" aria-hidden="true"></i></div>
+            <div class="method-info">
+              <div class="method-type">GitHub</div>
+              <div class="method-value">
+                <!-- ★ Replace with your GitHub URL (optional) -->
+                <a href="#" target="_blank" rel="noopener">Your GitHub Profile →</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end .contact-info -->
+
+        <!-- RIGHT: Contact form -->
+        <div class="contact-form-wrap fade-up">
+          <div class="form-title">Send a message</div>
+          <div class="form-subtitle">Fill out the form and I'll get back to you shortly.</div>
+
+          <!--
+            ════════════════════════════════════════════════════════════
+            FORMSPREE SETUP  (★ REPLACE THE PLACEHOLDER BELOW ★)
+            ────────────────────────────────────────────────────────────
+            1. Sign up free at https://formspree.io
+            2. Create a new form → copy your form ID (looks like "xayzqkpw")
+            3. In the <form> tag below, replace YOUR_FORM_ID with that ID
+            4. That's it — submissions will be emailed to your Formspree inbox
+
+            Until you replace the placeholder, the form will validate
+            client-side and show the success message without sending.
+            ════════════════════════════════════════════════════════════
+          -->
+          <form id="contactForm"
+                action="https://formspree.io/f/YOUR_FORM_ID"
+                method="POST"
+                onsubmit="handleSubmit(event)" novalidate>
+
+            <!-- Name + Email side by side -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName"
+                       placeholder="Sarah" required autocomplete="given-name"/>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName"
+                       placeholder="Lin" required autocomplete="family-name"/>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email"
+                     placeholder="you@example.com" required autocomplete="email"/>
+            </div>
+
+            <!-- Subject dropdown -->
+            <div class="form-group">
+              <label for="subject">What's this about?</label>
+              <select id="subject" name="subject">
+                <option value="">— Select a topic —</option>
+                <!-- ★ Update options to match your situation -->
+                <option value="feedback">Project feedback</option>
+                <option value="collaborate">Collaboration opportunity</option>
+                <option value="employer">Employer / hiring inquiry</option>
+                <option value="class">ITE 170 classmate</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message textarea -->
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message"
+                        placeholder="Tell me what's on your mind..." required></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn-submit">
+              Send Message →
+            </button>
+
+          </form>
+
+          <!-- Success message — shown after submit -->
+          <div class="success-message" id="successMsg">
+            <h3>✅ Message sent!</h3>
+            <p>Thank you for reaching out. I'll get back to you soon.</p>
+          </div>
+
+        </div><!-- end .contact-form-wrap -->
+
+      </div>
+    </section>
+
+    <!-- ── SOCIAL LINKS ── -->
+    <section class="social-section">
+      <div class="social-inner fade-up">
+        <span class="section-label">Find Me Online</span>
+        <h2>Connect on social</h2>
+        <p>Follow my work, see what I'm building, and stay in touch.</p>
+
+        <div class="social-links">
+          <!-- ★ Replace # with your actual profile URLs -->
+
+          <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <span class="social-link-icon"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></span>
+            LinkedIn
+          </a>
+
+          <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+            <span class="social-link-icon"><i class="ph ph-github-logo" aria-hidden="true"></i></span>
+            GitHub
+          </a>
+
+          <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="Behance or portfolio">
+            <span class="social-link-icon"><i class="ph ph-palette" aria-hidden="true"></i></span>
+            Behance
+          </a>
+
+          <!-- ★ Add or remove social links as needed:
+            Instagram, YouTube, Twitter/X, Dribbble, etc.
+          -->
+          <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="Other portfolio">
+            <span class="social-link-icon"><i class="ph ph-globe" aria-hidden="true"></i></span>
+            My Portfolio
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Thanks for visiting.</h2>
+          <p>Explore more of my work — projects, multimedia, and the skills behind them.</p>
+        </div>
+        <a href="projects.html" class="btn-primary">View My Projects →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Yodit Taressa · Web and Multimedia · NOVA Annandale</p>
+    <!-- Cross-link back to the animated version of this same page. -->
+    <p style="margin-top:8px;font-size:.85rem;opacity:.8;">
+      Viewing reduced-motion version · <a href="../contact.html" style="color:inherit;text-decoration:underline;">Standard version →</a>
+    </p>
+  </footer>
+
+  <script>
+    // ── MOBILE NAV ──
+    function toggleMobileNav() {
+      document.getElementById("mobileNav").classList.toggle("open");
+    }
+    document.addEventListener("click", function(e) {
+      const nav = document.getElementById("mobileNav");
+      const toggle = document.querySelector(".mobile-toggle");
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove("open");
+    });
+
+    // ── FORM HANDLER ──
+    // Validates required fields, then either:
+    //   • POSTs to Formspree (if you've replaced YOUR_FORM_ID in the form action), OR
+    //   • Shows the local success message (if the placeholder is still in place).
+    async function handleSubmit(e) {
+      e.preventDefault(); // stop the form from navigating away
+
+      const form = document.getElementById("contactForm");
+
+      // Gather field values and trim whitespace
+      const firstName = document.getElementById("firstName").value.trim();
+      const email     = document.getElementById("email").value.trim();
+      const message   = document.getElementById("message").value.trim();
+
+      // ── VALIDATION ──
+      if (!firstName || !email || !message) {
+        alert("Please fill in all required fields (marked with *).");
+        return;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      const showSuccess = () => {
+        form.style.display = "none";
+        document.getElementById("successMsg").classList.add("show");
+        form.reset();
+      };
+
+      // ── FORMSPREE SUBMIT ──
+      // If the action still contains the YOUR_FORM_ID placeholder, just show
+      // the success UI without making a network call.
+      if (form.action.includes("YOUR_FORM_ID")) {
+        showSuccess();
+        return;
+      }
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+        if (res.ok) showSuccess();
+        else alert("Sorry — something went wrong. Please try again or email me directly.");
+      } catch (err) {
+        alert("Network error. Please check your connection and try again.");
+      }
+    }
+
+    // ── SCROLL ANIMATIONS ──
+    const observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+    document.querySelectorAll(".fade-up").forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>

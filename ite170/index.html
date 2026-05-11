@@ -37,42 +37,66 @@
     <div class="mobile-nav-cta"><a href="contact.html" onclick="closeMobileNav()">Let&#39;s Connect &rarr;</a></div>
   </nav>
   <main id="main-content" style="padding-top:64px;">
-    <!-- HERO SLIDESHOW -->
+    <!-- HERO — SPLIT LAYOUT -->
     <section class="hero" aria-label="Introduction">
-      <div class="hero-slide active">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030476850/MfpdUUAlhogmrhwS.jpg" class="slide-media" alt="Yodit Taressa digital portrait" loading="eager" style="object-position:center top;" />
-      </div>
-      <div class="hero-slide">
-        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80" class="slide-media" alt="Creative design workspace with colorful tools" loading="lazy" />
-      </div>
-      <div class="hero-slide">
-        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80" class="slide-media" alt="Technology and digital creativity" loading="lazy" />
-      </div>
-      <div class="hero-content">
-        <span class="hero-eyebrow">ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</span>
-        <div class="slide-text-wrapper">
-          <div class="slide-text active">
-            <h2>Hi, I&#39;m Yodit Taressa.</h2>
-            <p>Information Systems Technology student, web designer, and digital creator. I build clean, responsive websites that work everywhere.</p>
+      <!-- Background image layer -->
+      <div class="hero-bg" aria-hidden="true"></div>
+      <!-- Gradient overlay -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <!-- Split content -->
+      <div class="hero-split">
+        <!-- LEFT: Text -->
+        <div class="hero-text fade-in-left">
+          <span class="hero-eyebrow">ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</span>
+          <h1>Hi, I&#39;m<br /><span class="hero-name-highlight">Yodit Taressa.</span></h1>
+          <p class="hero-sub">Information Systems Technology student, web designer, and digital creator. I build clean, responsive websites that work everywhere &mdash; from concept to live deployment.</p>
+          <div class="hero-stats" aria-label="Portfolio highlights">
+            <div class="hero-stat">
+              <span class="hero-stat-num">5</span>
+              <span class="hero-stat-label">Pages Built</span>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">6+</span>
+              <span class="hero-stat-label">Projects</span>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">WCAG</span>
+              <span class="hero-stat-label">Accessible</span>
+            </div>
           </div>
-          <div class="slide-text">
-            <h2>Design with Purpose.</h2>
-            <p>From concept to deployment &mdash; every project is crafted with intention, accessibility, and attention to detail.</p>
-          </div>
-          <div class="slide-text">
-            <h2>Built to Perform.</h2>
-            <p>Responsive layouts tested on every screen. Fast, accessible, and ready for the real world.</p>
+          <div class="hero-buttons">
+            <a href="projects.html" class="btn-primary">View My Projects &rarr;</a>
+            <a href="about.html" class="btn-secondary">About Me</a>
           </div>
         </div>
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn-primary">View My Projects &rarr;</a>
-          <a href="about.html" class="btn-secondary">About Me</a>
+        <!-- RIGHT: Portrait visual -->
+        <div class="hero-visual fade-in-right" aria-hidden="true">
+          <div class="hero-portrait-wrap">
+            <div class="hero-portrait-glow"></div>
+            <img
+              src="images/thumbs/digital_portrait.jpg"
+              alt="Digital pixel-art portrait of Yodit Taressa"
+              class="hero-portrait"
+              loading="eager"
+            />
+            <!-- Floating badge -->
+            <div class="hero-badge hero-badge-top">
+              <i class="ph ph-code" aria-hidden="true"></i>
+              HTML &bull; CSS &bull; JS
+            </div>
+            <div class="hero-badge hero-badge-bottom">
+              <i class="ph ph-device-mobile" aria-hidden="true"></i>
+              Responsive Design
+            </div>
+          </div>
         </div>
       </div>
-      <div class="slide-dots" id="slideDots" role="tablist" aria-label="Hero slides">
-        <button class="active" onclick="goToSlide(0)" aria-label="Slide 1" role="tab" aria-selected="true"></button>
-        <button onclick="goToSlide(1)" aria-label="Slide 2" role="tab" aria-selected="false"></button>
-        <button onclick="goToSlide(2)" aria-label="Slide 3" role="tab" aria-selected="false"></button>
+      <!-- Scroll indicator -->
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <i class="ph ph-arrow-down"></i>
       </div>
     </section>
     <!-- FEATURE 1 -->
@@ -120,12 +144,12 @@
           </div>
           <div class="card-body">
             <h3>ITE 170 Portfolio Website</h3>
-            <p>A fully responsive, accessible 5-page portfolio built from scratch with HTML, CSS, and JavaScript. Deployed live on Netlify.</p>
+            <p>A fully responsive, accessible 5-page portfolio built from scratch with HTML, CSS, and JavaScript. Deployed live on GitHub Pages.</p>
           </div>
         </a>
         <a href="multimedia.html" class="project-card fade-up" aria-label="View Multimedia project">
-          <div class="card-thumb">
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030476850/wKfgzRnrFZmlDtbh.jpg" alt="Canva design projects with colorful layouts" loading="lazy" />
+          <div class="card-thumb thumb-gradient-purple">
+            <span class="thumb-label">Multimedia Design</span>
             <span class="card-tag">Multimedia</span>
           </div>
           <div class="card-body">
@@ -134,8 +158,8 @@
           </div>
         </a>
         <a href="projects.html" class="project-card fade-up" aria-label="View Responsive Layout project">
-          <div class="card-thumb">
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030476850/CAlpNwcSvDtjFbzU.jpg" alt="Responsive web design on desktop tablet and mobile devices" loading="lazy" />
+          <div class="card-thumb thumb-gradient-mint">
+            <span class="thumb-label">Responsive Layout</span>
             <span class="card-tag">Responsive Design</span>
           </div>
           <div class="card-body">
@@ -157,7 +181,7 @@
           <span class="skill-tag">Tailwind CSS</span>
           <span class="skill-tag">Responsive Design</span>
           <span class="skill-tag">Web Accessibility (WCAG)</span>
-          <span class="skill-tag">Netlify Deployment</span>
+          <span class="skill-tag">GitHub Pages Deployment</span>
           <span class="skill-tag">Adobe Creative Suite</span>
           <span class="skill-tag">Video Editing</span>
           <span class="skill-tag">Digital Photography</span>
@@ -180,32 +204,10 @@
     </section>
   </main>
   <footer>
-    <p>&copy; 2026 <strong style="color:rgba(255,255,255,.75);">Yodit Taressa</strong> &middot; ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</p>
+    <p>&copy; 2025 <strong style="color:rgba(255,255,255,.75);">Yodit Taressa</strong> &middot; ITE 170 &middot; Multimedia &amp; Web Design &middot; NOVA Annandale</p>
     <p style="margin-top:8px;font-size:.85rem;opacity:.7;">Prefer less motion? <a href="no-animations/index.html" style="color:inherit;text-decoration:underline;">Reduced-motion version &rarr;</a></p>
   </footer>
   <script>
-    // Hero slideshow
-    var currentSlide = 0;
-    var slideTimer;
-    var slides = document.querySelectorAll('.hero-slide');
-    var texts  = document.querySelectorAll('.slide-text');
-    var dots   = document.querySelectorAll('#slideDots button');
-    function goToSlide(n) {
-      slides[currentSlide].classList.remove('active');
-      texts[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-      dots[currentSlide].setAttribute('aria-selected','false');
-      currentSlide = n;
-      slides[currentSlide].classList.add('active');
-      texts[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-      dots[currentSlide].setAttribute('aria-selected','true');
-      clearInterval(slideTimer);
-      slideTimer = setInterval(nextSlide, 4000);
-    }
-    function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
-    slideTimer = setInterval(nextSlide, 4000);
-
     function openMobileNav() {
       var nav = document.getElementById('mobileNav');
       nav.classList.add('open');
@@ -224,7 +226,6 @@
     }
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
 
-
     var observer = new IntersectionObserver(
       function(entries) {
         entries.forEach(function(entry) {
@@ -234,8 +235,6 @@
       { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     );
     document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
-
   </script>
 </body>
 </html>
-<!-- Rebuilt: 2026-05-11 12:50:38.008685 -->
